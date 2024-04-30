@@ -110,7 +110,22 @@ a {
     height: 100%;
     object-fit: cover;
     left: 3rem;
+    bottom: 2rem;
 }
+
+.homedecorations{
+    position: absolute;
+    font-size: 6rem;
+    color: white;
+    font-weight: bold;
+    width: 700PX;
+    left: 1rem;
+    top: 1rem;
+}
+
+
+
+
 
 
 
