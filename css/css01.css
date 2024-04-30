@@ -108,9 +108,9 @@ a {
 
 .prova{
     position: absolute;
-    width: 40rem;
-    height: 600px;
-    left: 0px;
+    width: 400px;
+    height: 400px;
+    left: 5rem;
     bottom: 0px;
 }
 
@@ -138,9 +138,59 @@ a {
     --bs-gutter-x:0rem;
 }
 
+ 
 
+.container-rb{
+    width: 80%;
+    margin: 0 auto;
+}
 
+.cards{
+    height: 40rem;
+    
+}
 
+.titoloUltimi{
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 3rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.scritte{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color:#faf8f5;
+    
+    
+}
+
+.scritte h2{
+    font-size: 4rem;
+}
+
+.scritte p{
+    width: 20rem;
+    font-size: 1.5rem;
+}
+
+.scritte p:last-child{
+    font-size: 1.3rem;
+    letter-spacing: 3px;
+}
+
+.footer{
+    background-color: grey;
+    padding-top: 2.5rem;
+    border-bottom: 0.1rem solid black;
+}
+
+.immagine{
+    padding-bottom: 5rem;
+}
 
 
 
