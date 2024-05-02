@@ -1,5 +1,6 @@
 let container = document.querySelector(".swiper-wrapper.ultimiarrivi");
-const URLAPI = "https://dummyjson.com/products/category/";
+const URLAPI = "https://dummyjson.com/products/category/smartphones";
+let arraySmarthphone = [];
 
 fetch(URLAPI)
 .then(data=>{
@@ -13,6 +14,7 @@ fetch(URLAPI)
 
 
 
+
 function ultimiArriviCard(ultimiArr){
     ultimiArr.forEach(card=> {
        let cards = 
@@ -21,11 +23,11 @@ function ultimiArriviCard(ultimiArr){
          <img src="${card.images[0]}" class="card-img-top" alt="...">
          <div class="card-body">
            <h5 class="card-title">${card.title}</h5>
-           <p class="card-text">${this.description}</p>
+           <p class="card-text">${card.description}</p>
            <a href="#" class="btn btn-primary">Go somewhere</a>
          </div>
        </div>
-     </div> `
+     </div>`
 
      container.innerHTML+=cards;
     });
