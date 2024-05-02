@@ -1,8 +1,9 @@
 let elFooter = document.querySelectorAll(".footer");
 
 function stampaFooter() {
-    elFooter.forEach(footer=>{
-        footer.innerHTML+= `<div class="row">
+  elFooter.forEach(footer => {
+    footer.innerHTML += `<div class="container-md">
+        <div class="row">
         <div class="col-3">
           <h5>Azamon</h5>
           <p>Siamo un e-commerce in crescita</p>
@@ -35,8 +36,9 @@ function stampaFooter() {
           <p>Contattaci</p>
         </div>
 
-      </div>`;
-    })
+      </div>
+    </div>`;
+  })
 }
 
 document.addEventListener("DOMContentLoaded", stampaFooter);

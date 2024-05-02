@@ -173,7 +173,6 @@ a {
     background-color: grey;
     padding-top: 2.5rem;
     border-bottom: 0.1rem solid black;
-    padding-left: 25rem;
 }
 
 .immagine {
@@ -200,4 +199,22 @@ a {
 
 .activeMenu {
     color: rgb(43, 104, 203) !important;
+}
+
+
+.immagine .row .col-6 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+.swiper-slide .card {
+    width: 300px;
+}
+
+.swiper-slide .card .image {
+    height: 250px;
 }
