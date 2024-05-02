@@ -186,12 +186,11 @@ a {
     position: fixed;
 }
 
-/* .card{
-    margin-top: 2rem;
-    width: calc(100%/3);
-    padding: 3rem;
-    border: none;
-    } */
+.bi-bag-check{
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    
+  }
 
 
 

@@ -28,7 +28,7 @@ function navBar(){
           </ul>
       </div>
       <ul class="nav-item checkout">
-        <li><button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="bi bi-bag-check"></i></button></li>
+        <li><button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="bi bi-bag-check"></i></button></li>
       </ul>
           </div>
         </nav>
