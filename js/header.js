@@ -15,23 +15,20 @@ function navBar(){
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../index.html">Homepage</a>
+                  <a class="nav-link active" aria-current="page" href="./index.html">Homepage</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="./pages/prodotti.html" role="button">
+                  <a class="nav-link" href="./prodotti.html" role="button">
                    Elenco prodotti
                   </a>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./pages/dettagliProdotto.html">Dettaglio prodotto</a>
-                  </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./pages/carrello.html">Carrello</a>
+                  <a class="nav-link" href="./carrello.html">Carrello</a>
                 </li>
               </li>
           </ul>
       </div>
       <ul class="nav-item checkout">
-        <li><a class="nav-link" href="#">Checkout</a></li>
+        <li><button class="nav-link checkout2" >Checkout</button></li>
       </ul>
           </div>
         </nav>
@@ -40,3 +37,11 @@ function navBar(){
 }
 
 document.addEventListener("DOMContentLoaded" , navBar);
+
+// let offCanvas = document.getElementById("offcanvas");
+//  elHeader.addEventListener("click", function(event){
+//   // if(event.target.classList.contains("checkout2")){
+//   //   offCanvas.classList.toggle("show");
+//   // }
+//   console.log(event.target);
+// })

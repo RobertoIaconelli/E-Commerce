@@ -138,13 +138,20 @@ color: white;
 
 .prezzoTotale{
 margin-top: 2rem;
-
-
+margin-right: 10rem;
 }
 
-.container-md{
-
+.totale{
+  border-top: 2px solid black;
+  width: 80%;
 }
+
+.oggettiCarrello{
+  width: 80%;
+  margin: 0 auto;
+}
+
+
 
 
 
