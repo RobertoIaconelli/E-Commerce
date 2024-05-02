@@ -193,6 +193,14 @@ a {
     padding-bottom: 5rem;
 }
 
+.navbar{
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    position: fixed;
+}
+
 
 
 

@@ -215,7 +215,17 @@ border: none;
 .navbar{
     z-index: 999;
     left: 0;
+    top: 0;
     width: 100%;
+    position: fixed;
+}
+
+.prodottiNostri{
+    margin-top: 7rem;
+}
+
+.filtri .nav-link{
+    background-color: rgba(166, 159, 159, 0.277);
 }
 
 

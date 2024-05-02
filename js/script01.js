@@ -25,5 +25,13 @@ var swiper = new Swiper(".mySwiper", {
      
   });
 
-  
+  let elHeader = document.querySelectorAll(".header");
+
+function navBar(){
+    elHeader.forEach(quotes=>{
+      quotes.innerHTML="Ciao";
+    })
+}
+
+document.addEventListener("DOMContentLoaded" , navBar);
 

@@ -9,43 +9,33 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-    
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary position-fixed">
-            <div class="container-fluid">
-            <div class="titolo">
-              <a class="navbar-brand" href="#">Azamon</a>
-            </div>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
 
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Homepage</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link" href="./pages/prodotti.html" role="button">
-                     Elenco prodotti
-                    </a>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Dettaglio prodotto</a>
+    <header class="header">
+
+    </header>
+
+     <h1 class="prodottiNostri text-center ">I Nostri Prodotti</h1>
+
+     <div class="filtri container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-home-tab" type="button" aria-selected="true">Tutti</button>
+                      </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="pills-home-tab" type="button" aria-selected="true">Smartphone</button>
                     </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Carrello</a>
-                  </li>
-                </li>
-            </ul>
-        </div>
-        <ul class="nav-item checkout">
-          <li><a class="nav-link" href="#">Checkout</a></li>
-        </ul>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="pills-profile-tab" type="button" aria-selected="false">Laptop</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="pills-contact-tab" type="button" aria-selected="false">Home Decorations</button>
+                    </li>
+                  </ul>
             </div>
-          </nav>
-     </div>
-
-     <h1 class="prodottiNostri text-center mt-5">I Nostri Prodotti</h1>
+        </div>
+    </div>
 
      <div class="container-rb d-flex flex-wrap">
      <div class="card">
@@ -53,7 +43,7 @@
         <div class="card-body">
           <h5 class="card-title">Casa dei sogni</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a href="./dettagliProdotto.html" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
       <div class="card">
@@ -170,6 +160,8 @@
       </div>
     </div>
 
+   
+
 
     <footer class="footer">
         <div class="row">
@@ -209,7 +201,7 @@
 
         <div class="col-12"></div>
        
- 
+        
       </footer>
 
 
@@ -223,5 +215,6 @@
 
 
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+     <script src="js/script01.js"></script>
 </body>
 </html>
