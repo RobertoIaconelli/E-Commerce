@@ -28,7 +28,7 @@ function navBar(){
           </ul>
       </div>
       <ul class="nav-item checkout">
-        <li><button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Checkout</button></li>
+        <li><button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="bi bi-bag-check"></i></button></li>
       </ul>
           </div>
         </nav>
@@ -37,13 +37,6 @@ function navBar(){
 }
 
 document.addEventListener("DOMContentLoaded" , navBar);
-// let elBtnX = document.querySelector(".btn-close");
-// let offCanvas = document.getElementById("offcanvas");
-//  elHeader[0].addEventListener("click", function(event){
-//   if(event.target.classList.contains("checkout2")){
-//     offCanvas.classList.add("show");
-//   }else if(event.target.classList.contains("btn-close")){
-//     offCanvas.classList.remove("show");
-//   }
-//  })
+
+
 
