@@ -1,10 +1,19 @@
+
+function illuminazione(){
 let urlPagina = window.location.pathname;
 console.log(urlPagina);
 let splittato = urlPagina.split("/").pop();
 console.log(splittato);
 
-let tutti = document.getElementsByClassName(".nav-link");
+let tutti = document.querySelectorAll(".nav-link.k");
 
-setTimeout(() => {
-    
-}, 5000);
+tutti.forEach(element => {
+    let link = element.getAttribute("href");
+    let linkSplittato = link.split("/").pop();
+    if(linkSplittato === splittato){
+        element.classList.add("activemenu")
+}
+});
+}
+
+document.addEventListener("DOMContentLoaded", illuminazione);

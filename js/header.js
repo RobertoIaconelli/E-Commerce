@@ -15,14 +15,14 @@ function navBar(){
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="./index.html">Homepage</a>
+                  <a class="nav-link k " aria-current="page" href="./index.html">Homepage</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="./prodotti.html" role="button">
+                  <a class="nav-link k" href="./prodotti.html" role="button">
                    Elenco prodotti
                   </a>
                 <li class="nav-item">
-                  <a class="nav-link" href="./carrello.html">Carrello</a>
+                  <a class="nav-link k" href="./carrello.html">Carrello</a>
                 </li>
               </li>
           </ul>
