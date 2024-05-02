@@ -25,7 +25,7 @@ function navBar(){
                     <a class="nav-link" href="./pages/dettagliProdotto.html">Dettaglio prodotto</a>
                   </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Carrello</a>
+                  <a class="nav-link" href="./pages/carrello.html">Carrello</a>
                 </li>
               </li>
           </ul>
