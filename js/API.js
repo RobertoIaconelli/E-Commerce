@@ -1,14 +1,15 @@
 let container = document.querySelector(".swiper-wrapper.ultimiarrivi");
-const URLAPI = "https://dummyjson.com/products/category/smartphones";
+const URLAPI = "https://dummyjson.com/products";
 let arraySmarthphone = [];
 
 fetch(URLAPI)
   .then(data => {
     return data.json();
   })
-  .then(quotes => {
-    console.log(quotes);
-    ultimiArriviCard(quotes.products);
+  .then(data => {
+    console.log(data);
+    let ottoElementi = data.slice(0, 8)
+    ultimiArriviCard(ottoElementi);
     // console.log(quotes.products);
   })
 

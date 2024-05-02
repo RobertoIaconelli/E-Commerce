@@ -62,10 +62,11 @@ a {
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0px !important;
+    height: 80vh;
 }
 
 .swiper-slide img {
@@ -185,6 +186,8 @@ a {
     top: 0;
     width: 100%;
     position: fixed;
+    padding: 0rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 20px -20px;
 }
 
 .bi-bag-check {
@@ -194,7 +197,7 @@ a {
 }
 
 .mt-10 {
-    margin-top: 80px;
+    /* margin-top: 0px; */
 }
 
 .activeMenu {
@@ -217,4 +220,42 @@ a {
 
 .swiper-slide .card .image {
     height: 250px;
+}
+
+.background {
+    width: 200%;
+}
+
+
+/* COLORI MAIN SLIDER */
+.rosso {
+    background-color: #9c0a0a;
+}
+
+.verde {
+    background-color: #1d372a;
+}
+
+.chiaro {
+    background-color: #5d94bd;
+}
+
+.verdino {
+    background-color: #a3b94a;
+}
+
+.grigio {
+    background-color: #3b3b3b;
+}
+
+.container-mdf {
+    max-width: 1320px;
+    margin: 0 auto;
+    height: 600px;
+}
+
+/*</COLORI MAIN SLIDER> */
+
+.navbar-collapse {
+    justify-content: center;
 }
