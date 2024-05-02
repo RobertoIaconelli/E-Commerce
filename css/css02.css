@@ -194,6 +194,34 @@ a {
 }
 
 
+/* -------------------------PRODOTTI---------------------- */
+.card{
+margin-top: 2rem;
+width: calc(100%/3);
+padding: 3rem;
+border: none;
+}
+
+.immagine2{
+    border: 1px solid rgba(0, 0, 0, 0.175);
+    
+}
+
+.card-body{
+    border-radius: 0px 0px 10px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.175);
+}
+
+.navbar{
+    z-index: 999;
+    left: 0;
+    width: 100%;
+}
+
+
+
+
+
 
 
 
