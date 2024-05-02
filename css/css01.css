@@ -34,13 +34,7 @@ a {
     justify-content: space-between;
 }
 
-#navbarNavDropdown {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    margin: 0;
-    align-items: center;
-}
+
 
 .nav-item{
         padding: 0.5rem;
@@ -84,8 +78,6 @@ a {
     font-size: 6rem;
     color: white;
     font-weight: bold;
-   
-
 }
 
 .computer{
@@ -96,17 +88,15 @@ a {
     width: 500PX;
     right: 15rem;
     top: 2rem;
-
 }
 
 .sconto{
     position: absolute;
     width: 1000px !important;
-    left: 2px;
-    
+    left: 2px; 
 }
 
-.prova{
+.imgSconto{
     position: absolute;
     width: 400px;
     height: 400px;
@@ -114,12 +104,10 @@ a {
     bottom: 0px;
 }
 
-.prova img{
+.imgSconto img{
     max-width: 100%;
     height: 100%;
     object-fit: cover;
- 
-
 }
 
 .homedecorations{
@@ -146,8 +134,7 @@ a {
 }
 
 .cards{
-    height: 40rem;
-    
+    height: 40rem; 
 }
 
 .titoloUltimi{
@@ -164,8 +151,6 @@ a {
     flex-direction: column;
     align-items: center;
     background-color:#faf8f5;
-    
-    
 }
 
 .scritte h2{
@@ -201,7 +186,12 @@ a {
     position: fixed;
 }
 
-
+/* .card{
+    margin-top: 2rem;
+    width: calc(100%/3);
+    padding: 3rem;
+    border: none;
+    } */
 
 
 

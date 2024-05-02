@@ -195,7 +195,7 @@ a {
 
 
 /* -------------------------PRODOTTI---------------------- */
-.card{
+ .card.prodotti{
 margin-top: 2rem;
 width: calc(100%/3);
 padding: 3rem;
