@@ -1,3 +1,4 @@
+// SLIDER HOME
 var swiper = new Swiper(".mySwiper", {
   navigation: {
     nextEl: ".swiper-button-next",
@@ -11,21 +12,7 @@ var swiper = new Swiper(".mySwiper", {
   speed: 3000
 });
 
-// var swiper = new Swiper(".cards", {
-//   slidesPerView: 4,
-//   grid: {
-//     rows: 1,
-//   },
-//   loop: true,
-//   spaceBetween: 30,
-//   autoplay: {
-//     delay: 1000,
-//     enabled: true,
-//   },
-
-// });
-
-
+// SLIDER PAGINA DETTAGLIO
 var swiper = new Swiper(".swiperDettaglio", {
   loop: true,
   spaceBetween: 10,
