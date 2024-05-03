@@ -1,5 +1,8 @@
 let container = document.querySelector(".swiper-wrapper.ultimiarrivi");
+<<<<<<< HEAD
 let prodotti = document.querySelector("#containerProdotti");
+=======
+>>>>>>> f50f64b8b0bca8995717e14b2969127655650004
 const URLAPI = "https://dummyjson.com/products";
 let arraySmarthphone = [];
 
@@ -8,6 +11,7 @@ fetch(URLAPI)
     return data.json();
   })
   .then(data => {
+<<<<<<< HEAD
 
     
      let ottoElementi = data.products.slice(0, 8);
@@ -40,6 +44,14 @@ fetch(URLAPI)
   })
   
 
+=======
+    console.log(data);
+    let ottoElementi = data.slice(0, 8)
+    ultimiArriviCard(ottoElementi);
+    // console.log(quotes.products);
+  })
+
+>>>>>>> f50f64b8b0bca8995717e14b2969127655650004
 
 
 
@@ -53,13 +65,20 @@ function ultimiArriviCard(ultimiArr) {
             </div>
             <div class="card-body">
               <h5 class="card-title">${card.title}</h5>
+<<<<<<< HEAD
               <a href="#" class="btn btn-primary">Dettaglio prodotto</a>
+=======
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+>>>>>>> f50f64b8b0bca8995717e14b2969127655650004
             </div>
         </div>
     </div>`
 
     container.innerHTML += cards;
+<<<<<<< HEAD
 
+=======
+>>>>>>> f50f64b8b0bca8995717e14b2969127655650004
   });
 
 }
