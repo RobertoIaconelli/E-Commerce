@@ -56,11 +56,7 @@ a {
 
 .swiper {
     width: 100%;
-<<<<<<< HEAD
-    
-=======
-    height: 80vh;
->>>>>>> f50f64b8b0bca8995717e14b2969127655650004
+
 }
 
 .swiper-slide {
@@ -70,11 +66,7 @@ a {
     justify-content: center;
     align-items: center;
     padding: 0px !important;
-<<<<<<< HEAD
-    
-=======
-    height: 80vh;
->>>>>>> f50f64b8b0bca8995717e14b2969127655650004
+
 }
 
 .swiper-slide img {
@@ -146,10 +138,7 @@ a {
 
 .cards {
     height: 40rem;
-<<<<<<< HEAD
-   
-=======
->>>>>>> f50f64b8b0bca8995717e14b2969127655650004
+
 }
 
 .titoloUltimi {
@@ -270,7 +259,6 @@ a {
 
 .navbar-collapse {
     justify-content: center;
-<<<<<<< HEAD
 }
 
 .card {
@@ -289,15 +277,11 @@ a {
     object-fit: cover;
 }
 
-#containerProdotti{
+#containerProdotti {
     justify-content: center;
-  
+
 }
 
-.wrappando{
+.wrappando {
     min-height: 1000px;
 }
-
-=======
-}
->>>>>>> f50f64b8b0bca8995717e14b2969127655650004

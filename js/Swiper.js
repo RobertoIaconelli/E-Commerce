@@ -11,7 +11,6 @@ var swiper = new Swiper(".mySwiper", {
   speed: 3000
 });
 
-<<<<<<< HEAD
 // var swiper = new Swiper(".cards", {
 //   slidesPerView: 4,
 //   grid: {
@@ -25,21 +24,6 @@ var swiper = new Swiper(".mySwiper", {
 //   },
 
 // });
-=======
-var swiper = new Swiper(".cards", {
-  slidesPerView: 4,
-  grid: {
-    rows: 1,
-  },
-  loop: true,
-  spaceBetween: 30,
-  autoplay: {
-    delay: 1000,
-    enabled: true,
-  },
-
-});
->>>>>>> f50f64b8b0bca8995717e14b2969127655650004
 
 
 var swiper = new Swiper(".swiperDettaglio", {
