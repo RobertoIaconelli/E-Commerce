@@ -1,112 +1,27 @@
-.telefoni,.computer, .homedecorations{
-    font-family: "Modak", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    color: transparent;
-    -webkit-text-stroke: 2px black;
-}
-
-.nav ul {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    margin: 0;
-    align-items: center;
-    
-    
-}
-
-.nav li {
-    padding: 0.5rem;
-    padding-left: 2rem;
-    
-}
-
-a {
-    color: black;
-    text-decoration: none;
-}
-
-
-
-.nav{
-    display: flex;
-    justify-content: space-between;
-}
-
-#navbarNavDropdown {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    margin: 0;
-    align-items: center;
-}
-
-.nav-item{
-        padding: 0.5rem;
-        padding-left: 2rem;
-}
-
-.navbar-brand{
-    height: 90px;
-   
-}
-
-.nav-item.checkout li{
-    align-items: center;
-    color: green;
-    list-style-type: none;
-}
-
-.swiper {
-    width: 100%;
-    height: 80vh;
-  }
-
-  .swiper-slide {
+.swiper-slide {
     text-align: center;
     font-size: 18px;
-   
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .swiper-slide img {
+.swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-
-.telefoni{
-    position: absolute;
-    font-size: 6rem;
-    color: white;
-    font-weight: bold;
-   
-
 }
 
-.computer{
-    position: absolute;
-    font-size: 6rem;
-    color: white;
-    font-weight: bold;
-    width: 500PX;
-    right: 15rem;
-    top: 2rem;
 
-}
-
-.sconto{
+.sconto {
     position: absolute;
     width: 1000px !important;
     left: 2px;
-    
+
 }
 
-.prova{
+.prova {
     position: absolute;
     width: 400px;
     height: 400px;
@@ -114,15 +29,15 @@ a {
     bottom: 0px;
 }
 
-.prova img{
+.prova img {
     max-width: 100%;
     height: 100%;
     object-fit: cover;
- 
+
 
 }
 
-.homedecorations{
+.homedecorations {
     position: absolute;
     font-size: 6rem;
     color: white;
@@ -131,88 +46,87 @@ a {
     left: 1rem;
     top: 1rem;
 
-      
+
 }
 
-.row{
-    --bs-gutter-x:0rem;
+.row {
+    --bs-gutter-x: 0rem;
 }
 
- 
 
-.container-rb{
+
+.container-rb {
     width: 80%;
     margin: 0 auto;
 }
 
-.cards{
+.cards {
     height: 40rem;
-    
+
 }
 
-.titoloUltimi{
+.titoloUltimi {
     text-align: center;
     margin-top: 5rem;
     font-size: 3rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.scritte{
+.scritte {
     display: flex;
     text-align: center;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color:#faf8f5;
-    
-    
+    background-color: #faf8f5;
+
+
 }
 
-.scritte h2{
+.scritte h2 {
     font-size: 4rem;
 }
 
-.scritte p{
+.scritte p {
     width: 20rem;
     font-size: 1.5rem;
 }
 
-.scritte p:last-child{
+.scritte p:last-child {
     font-size: 1.3rem;
     letter-spacing: 3px;
 }
 
-.footer{
+.footer {
     background-color: grey;
     padding-top: 2.5rem;
     border-bottom: 0.1rem solid black;
-    padding-left: 25rem;
 }
 
-.immagine{
+.immagine {
     padding-bottom: 5rem;
 }
 
 
 /* -------------------------PRODOTTI---------------------- */
- .card.prodotti{
-margin-top: 2rem;
-width: calc(100%/3);
-padding: 3rem;
-border: none;
+.card.prodotti {
+    margin-top: 2rem;
+    width: calc(100%/3);
+    padding: 3rem;
+    border: none;
 }
 
-.immagine2{
+.immagine2 {
     border: 1px solid rgba(0, 0, 0, 0.175);
-    
+
 }
 
-.card-body{
+.card-body {
     border-radius: 0px 0px 10px 10px;
     border: 1px solid rgba(0, 0, 0, 0.175);
 }
 
-.navbar{
+.navbar {
     z-index: 999;
     left: 0;
     top: 0;
@@ -220,18 +134,10 @@ border: none;
     position: fixed;
 }
 
-.prodottiNostri{
+.prodottiNostri {
     margin-top: 7rem;
 }
 
-.filtri .nav-link{
+.filtri .nav-link {
     background-color: rgba(166, 159, 159, 0.277);
 }
-
-
-
-
-
-
-
-

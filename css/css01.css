@@ -1,4 +1,6 @@
-.telefoni,.computer, .homedecorations{
+.telefoni,
+.computer,
+.homedecorations {
     font-family: "Modak", system-ui;
     font-weight: 400;
     font-style: normal;
@@ -12,14 +14,14 @@
     list-style-type: none;
     margin: 0;
     align-items: center;
-    
-    
+
+
 }
 
 .nav li {
     padding: 0.5rem;
     padding-left: 2rem;
-    
+
 }
 
 a {
@@ -29,24 +31,24 @@ a {
 
 
 
-.nav{
+.nav {
     display: flex;
     justify-content: space-between;
 }
 
 
 
-.nav-item{
-        padding: 0.5rem;
-        padding-left: 2rem;
+.nav-item {
+    padding: 0.5rem;
+    padding-left: 2rem;
 }
 
-.navbar-brand{
+.navbar-brand {
     height: 90px;
-   
+
 }
 
-.nav-item.checkout li{
+.nav-item.checkout li {
     align-items: center;
     color: green;
     list-style-type: none;
@@ -54,33 +56,34 @@ a {
 
 .swiper {
     width: 100%;
-    height: 80vh;
-  }
+    
+}
 
-  .swiper-slide {
+.swiper-slide {
     text-align: center;
     font-size: 18px;
-   
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+    padding: 0px !important;
+    
+}
 
-  .swiper-slide img {
+.swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+}
 
-.telefoni{
+.telefoni {
     position: absolute;
     font-size: 6rem;
     color: white;
     font-weight: bold;
 }
 
-.computer{
+.computer {
     position: absolute;
     font-size: 6rem;
     color: white;
@@ -90,13 +93,13 @@ a {
     top: 2rem;
 }
 
-.sconto{
+.sconto {
     position: absolute;
     width: 1000px !important;
-    left: 2px; 
+    left: 2px;
 }
 
-.imgSconto{
+.imgSconto {
     position: absolute;
     width: 400px;
     height: 400px;
@@ -104,13 +107,13 @@ a {
     bottom: 0px;
 }
 
-.imgSconto img{
+.imgSconto img {
     max-width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.homedecorations{
+.homedecorations {
     position: absolute;
     font-size: 6rem;
     color: white;
@@ -119,86 +122,167 @@ a {
     left: 1rem;
     top: 1rem;
 
-      
+
 }
 
-.row{
-    --bs-gutter-x:0rem;
+.row {
+    --bs-gutter-x: 0rem;
 }
 
- 
 
-.container-rb{
+
+.container-rb {
     width: 80%;
     margin: 0 auto;
 }
 
-.cards{
-    height: 40rem; 
+.cards {
+    height: 40rem;
+   
 }
 
-.titoloUltimi{
+.titoloUltimi {
     text-align: center;
     margin-top: 5rem;
     font-size: 3rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.scritte{
+.scritte {
     display: flex;
     text-align: center;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color:#faf8f5;
+    background-color: #faf8f5;
 }
 
-.scritte h2{
+.scritte h2 {
     font-size: 4rem;
 }
 
-.scritte p{
+.scritte p {
     width: 20rem;
     font-size: 1.5rem;
 }
 
-.scritte p:last-child{
+.scritte p:last-child {
     font-size: 1.3rem;
     letter-spacing: 3px;
 }
 
-.footer{
+.footer {
     background-color: grey;
     padding-top: 2.5rem;
     border-bottom: 0.1rem solid black;
-    padding-left: 25rem;
 }
 
-.immagine{
+.immagine {
     padding-bottom: 5rem;
 }
 
-.navbar{
+.navbar {
     z-index: 999;
     left: 0;
     top: 0;
     width: 100%;
     position: fixed;
+    padding: 0rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 20px -20px;
 }
 
-.bi-bag-check{
+.bi-bag-check {
     color: rgb(0, 0, 0);
     font-size: 2rem;
-    
-  }
 
-  .mt-10{
-    margin-top: 80px;
-  }
+}
 
-  .activemenu{
+.mt-10 {
+    /* margin-top: 0px; */
+}
+
+.activeMenu {
     color: rgb(43, 104, 203) !important;
-  }
+}
 
 
+.immagine .row .col-6 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+.swiper-slide .card {
+    width: 300px;
+}
+
+.swiper-slide .card .image {
+    height: 250px;
+}
+
+.background {
+    width: 200%;
+}
+
+
+/* COLORI MAIN SLIDER */
+.rosso {
+    background-color: #9c0a0a;
+}
+
+.verde {
+    background-color: #1d372a;
+}
+
+.chiaro {
+    background-color: #5d94bd;
+}
+
+.verdino {
+    background-color: #a3b94a;
+}
+
+.grigio {
+    background-color: #3b3b3b;
+}
+
+.container-mdf {
+    max-width: 1320px;
+    margin: 0 auto;
+    height: 600px;
+}
+
+/*</COLORI MAIN SLIDER> */
+
+.navbar-collapse {
+    justify-content: center;
+}
+
+.card {
+    width: 300px;
+    margin: 2rem;
+}
+
+.card .image {
+    height: 250px;
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#containerProdotti{
+    justify-content: center;
+  
+}
+
+.wrappando{
+    min-height: 1000px;
+}
 
