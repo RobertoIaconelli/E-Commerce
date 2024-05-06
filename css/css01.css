@@ -285,3 +285,8 @@ a {
 .wrappando {
     min-height: 1000px;
 }
+
+.mySwiper2{
+  
+    height: 600px !important;
+}

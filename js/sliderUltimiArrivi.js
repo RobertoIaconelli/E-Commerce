@@ -39,12 +39,29 @@ function ultimiArriviCard(ultimiArr) {
               </div>
               <div class="card-body">
                 <h5 class="card-title">${card.title}</h5>
-                <a href="#" class="btn btn-primary">Dettaglio prodotto</a>
+                <a data-id="${card.id}" href="dettagliProdotto.html" class="btn btn-primary dettaglio">Dettaglio prodotto</a>
               </div>
           </div>
       </div>`
 
     container.innerHTML += cards;
+    
   });
-
+  dettaglioProdotto();
 }
+
+function dettaglioProdotto(){
+  let dettagliProdotto = document.querySelectorAll(".dettaglio");
+  console.log(dettagliProdotto);
+   dettagliProdotto.forEach(prodotto=>{
+    prodotto.addEventListener("click", function(){
+      let elemento = this.getAttribute("data-id");
+      console.log(elemento,"idProdotto");
+     localStorage.setItem("idProdotto", elemento);
+    
+     
+
+    })
+   })
+}
+

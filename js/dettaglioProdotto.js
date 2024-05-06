@@ -8,21 +8,21 @@ fetch(`https://dummyjson.com/products/${storage}`)
     console.log(data);
     stampaDettaglio(data);
     var swiper = new Swiper(".swiperDettaglio", {
-      loop: true,
+      loop: false,
       spaceBetween: 10,
       slidesPerView: 4,
       freeMode: true,
       watchSlidesProgress: true,
     });
     var swiper2 = new Swiper(".mySwiper2", {
-      loop: true,
+      loop: false,
       spaceBetween: 10,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
       thumbs: {
-        swiper: swiper,
+        swiper: swiper2,swiper
       },
     });
   });
@@ -31,47 +31,25 @@ let container = document.querySelector(".container-rb");
 function stampaDettaglio(prodotto) {
   let card = ` <div class="row justify-content-center">
     <div class="col-lg-4">
+
     <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+    
     <div class="swiper-wrapper imgTop">
     </div>
+    
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
     </div>
+
     <div thumbsSlider="" class="swiper swiperDettaglio">
-    <div class="swiper-wrapper">
-    <div class="swiper-slide">
-    <img src="${prodotto.images[0]}" />
-    </div>
-    <div class="swiper-slide">
-    <img src="" />
-    </div>
-    <div class="swiper-slide">
-    <img src="" />
-    </div>
-    <div class="swiper-slide">
-    <img src="" />
-    </div>
-    <div class="swiper-slide">
-    <img src="" />
-    </div>
-    <div class="swiper-slide">
-    <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-    </div>
-    <div class="swiper-slide">
-    <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-    </div>
-    <div class="swiper-slide">
-    <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-    </div>
-    <div class="swiper-slide">
-    <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-    </div>
-    <div class="swiper-slide">
-    <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+    <div class="swiper-wrapper imgBottom">
+  
+    
+
     </div>
     </div>
     </div>
-    </div>
+    
     <div class="col-lg-5">
     <div class="prodottoDesc">
     <h1 class="titolo2">${prodotto.title}</h1>
@@ -85,12 +63,14 @@ function stampaDettaglio(prodotto) {
     </div>
     </div>`;
 
-  let imgtop = document.getElementsByClassName(".imgTop");
-  console.log(imgtop);
-  prodotto.images.forEach((immagine) => {
-    let cardImmagini = `<div class="swiper-slide">
-            <img src="${immagine}"/></div>`;
-    imgtop.innerHTML += cardImmagini;
-  });
-  container.innerHTML = card;
+    container.innerHTML = card;
+    let imgtop = document.querySelector(".imgTop");
+    let imgBottom = document.querySelector(".imgBottom");
+    console.log(imgtop);
+    prodotto.images.forEach((immagine) => {
+      let cardImmagini = `<div class="swiper-slide">
+              <img src="${immagine}"/></div>`;
+              imgtop.innerHTML += cardImmagini;
+              imgBottom.innerHTML+= cardImmagini;
+            });
 }
