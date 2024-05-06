@@ -19,21 +19,10 @@
     <div class="container-md">
         <div class="oggettiCarrello">
             <h1 class="carrello">Carrello</h1>
-            <div class="row">
-                <div class="col-lg-3 ">
-                    <div class="divImmagine">
-                        <img src="https://source.unsplash.com/600x400?car" class="immagineCarrello"/>
-                    </div>
-                </div>
-                <div class="col-lg-4 px-3">
-                    <h1>Nome Oggetto</h1>
-                    <p>Quantità: </p>
-                    <p>Prezzo: </p>
-                    <button class="bg-danger btnDelete">Rimuovi</button>
-                </div>
-            </div>
+            
             
         </div>
+
     </div>
       <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
         <div class="offcanvas-header">
@@ -44,11 +33,9 @@
         <div class="offcanvas-body">
             <div class="">
                 <h1 class="prezzoTotale ">Prezzo Totale</h1>
-            <ul>
-               <li>1200</li>
-               <li>500</li>
+            <ul class="listaPrezzi">
             </ul>
-            <p class="totale h5">Prezzo Totale : 1700 euro</p>
+            <p class="totale h5">Prezzo Totale : <span class="prezzoTotale2"></span> euro</p>
           <p></p>
      </div>
     </div>
@@ -67,6 +54,7 @@
  <script src="../js/header.js"></script>
  <script src="../js/footer.js"></script>
  <script src="./js/linkActive.js"></script>
+ <script src="./js/carrello.js"></script>
  
 </body>
 </html>

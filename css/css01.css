@@ -290,3 +290,9 @@ a {
   
     height: 600px !important;
 }
+
+.prodottoCarrello{
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(94, 92, 92, 0.392);
+    padding: 0.5rem;
+}

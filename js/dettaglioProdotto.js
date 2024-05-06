@@ -58,7 +58,7 @@ function stampaDettaglio(prodotto) {
     <i class="fa-solid fa-star"></i>
     <p class="quantita">Quantità: <span class="text-success">${prodotto.stock}</span></p>
     <p class="h1">Prezzo: <span class="text-primary">${prodotto.price}€</span></p>
-    <button>Aggiungi al carrello</button>
+    <button onClick="aggiungiAlCarrello()" data-id="${prodotto.id}" class="btnCarrello">Aggiungi al carrello</button>
     </div>
     </div>
     </div>`;
@@ -74,3 +74,19 @@ function stampaDettaglio(prodotto) {
               imgBottom.innerHTML+= cardImmagini;
             });
 }
+
+let arrCarrello = [];
+function aggiungiAlCarrello(){
+    let carrello = document.querySelector(".btnCarrello");
+    let idCarrello = carrello.getAttribute("data-id");
+    let letturaLocalStorage = JSON.parse(localStorage.getItem("Carrello"));
+    if(letturaLocalStorage != null){
+        arrCarrello = letturaLocalStorage
+    }
+    arrCarrello.push(idCarrello);
+    console.log(arrCarrello);
+    localStorage.setItem("Carrello", JSON.stringify(arrCarrello));
+
+
+}
+
