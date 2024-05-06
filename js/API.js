@@ -15,18 +15,8 @@ function dettaglioProdotto(id) {
       console.log(data.products);
     })
 }
-let dettaglio = document.getElementsByClassName("dettaglio");
-console.log(dettaglio);
 
-Array.from(dettaglio).forEach(pallone => {
-  console.log("ciao2");
-  pallone.addEventListener("click", function () {
-    console.log("ciao");
-    let idProdotto = this.getAttribute("data-id");
-    console.log(idProdotto);
-    dettaglioProdotto(idProdotto);
-  })
-})
+
 
 
 

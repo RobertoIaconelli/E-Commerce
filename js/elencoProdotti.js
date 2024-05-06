@@ -24,18 +24,36 @@ function elencoProdotti(prodotto) {
     let elementos =
       `<div class="card">
           <div class="image">
-            <img src="${elemento.images[0]}" class="" alt="...">
+          <img src="${elemento.images[0]}" class="" alt="...">
           </div>
           <div class="card-body">
-            <h5 class="card-title">${elemento.title}</h5>
-            <a data-id="${elemento.id}" href="./dettagliProdotto.html" class="btn btn-primary dettaglio">Descrizione prodotto</a>
+          <h5 class="card-title">${elemento.title}</h5>
+          <a  data-id="${elemento.id}" href="./dettagliProdotto.html" class="btn btn-primary dettaglio">Descrizione prodotto</a>
           </div>
-      </div>`
-    prodotti.innerHTML += elementos;
-
-
-  });
+          </div>`
+          prodotti.innerHTML += elementos;
+          
+          
+        });
+        dettaglioProdotto();
 }
+
+
+function dettaglioProdotto(){
+  let dettagliProdotto = document.querySelectorAll(".dettaglio");
+  console.log(dettagliProdotto);
+   dettagliProdotto.forEach(prodotto=>{
+    prodotto.addEventListener("click", function(){
+      let elemento = this.getAttribute("data-id");
+      console.log(elemento,"idProdotto");
+     localStorage.setItem("idProdotto", elemento);
+    
+     
+
+    })
+   })
+}
+
 
 
 // CHIAMATA PER CATEGORIA
