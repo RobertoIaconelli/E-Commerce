@@ -62,7 +62,6 @@
 
 .cards {
     height: 40rem;
-
 }
 
 .titoloUltimi {
@@ -121,10 +120,11 @@
 
 }
 
-.card-body {
-    border-radius: 0px 0px 10px 10px;
-    border: 1px solid rgba(0, 0, 0, 0.175);
+.card-body h5 {
+    text-align: left;
 }
+
+
 
 .navbar {
     z-index: 999;
@@ -140,4 +140,21 @@
 
 .filtri .nav-link {
     background-color: rgba(166, 159, 159, 0.277);
+}
+
+.voto {
+    margin-left: 4px;
+}
+
+.stellePiene,
+.stelleVuote {
+    color: rgb(255, 104, 58);
+}
+
+.box-voto {
+    font-size: 13px;
+}
+
+.w-90 {
+    width: 90%;
 }

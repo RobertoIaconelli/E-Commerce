@@ -264,6 +264,8 @@ a {
 .card {
     width: 300px;
     margin: 2rem;
+    overflow: hidden;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .card .image {
@@ -286,13 +288,24 @@ a {
     min-height: 1000px;
 }
 
-.mySwiper2{
-  
+.mySwiper2 {
+
     height: 600px !important;
 }
 
-.prodottoCarrello{
+.prodottoCarrello {
     margin-bottom: 20px;
     border-bottom: 2px solid rgba(94, 92, 92, 0.392);
     padding: 0.5rem;
+}
+
+
+.new {
+    top: 10px;
+    background-color: rgb(255, 104, 58);
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 0px 10px 10px 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
 }

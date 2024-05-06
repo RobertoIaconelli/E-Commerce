@@ -24,34 +24,61 @@ function elencoProdotti(prodotto) {
     let elementos =
       `<div class="card">
           <div class="image">
-          <img src="${elemento.images[0]}" class="" alt="...">
+          <img src="${elemento.thumbnail}" class="" alt="...">
           </div>
           <div class="card-body">
           <h5 class="card-title">${elemento.title}</h5>
-          <a  data-id="${elemento.id}" href="./dettagliProdotto.html" class="btn btn-primary dettaglio">Descrizione prodotto</a>
+          <div class="d-flex justify-content-between">
+                  <p class="">${elemento.price.toFixed(2)}</p>
+                  <div class="d-flex h6 box-voto">
+                    <p class=""><span class="stellePiene"></span><span class="stelleVuote"></span></p>
+                    <p class="voto">${elemento.rating.toFixed(1)}</p>
+                  </div>
+          </div>
+                <div class="d-flex justify-content-between gap-4 ">
+                  <a data-id="${elemento.id}" href="dettagliProdotto.html" class="btn btn-primary dettaglio w-90">Dettaglio prodotto</a>
+                  <button data-id="${elemento.id}" class="btn btn-dark btnCarrello"><i class="bi bi-cart3"></i></button>
+                </div>
           </div>
           </div>`
-          prodotti.innerHTML += elementos;
-          
-          
-        });
-        dettaglioProdotto();
+    prodotti.innerHTML += elementos;
+
+    let voto = Math.ceil(elemento.rating);
+    let currentCard = prodotti.lastElementChild
+    console.log(voto);
+
+    let stellePiene = currentCard.querySelector(".stellePiene");
+    let stelleVuote = currentCard.querySelector(".stelleVuote");
+
+    for (i = 0; i < voto; i++) {
+      let stella = `<i class="fa-solid fa-star"></i>`;
+      stellePiene.innerHTML += stella;
+    }
+
+    for (i = 0; i < (5 - voto); i++) {
+      let stella = `<i class="fa-regular fa-star"></i>`;
+      stelleVuote.innerHTML += stella;
+    }
+
+  });
+  dettaglioProdotto();
+  aggiungiAlCarrello();
 }
 
 
-function dettaglioProdotto(){
+function dettaglioProdotto() {
   let dettagliProdotto = document.querySelectorAll(".dettaglio");
   console.log(dettagliProdotto);
-   dettagliProdotto.forEach(prodotto=>{
-    prodotto.addEventListener("click", function(){
+  dettagliProdotto.forEach(prodotto => {
+    prodotto.addEventListener("click", function () {
       let elemento = this.getAttribute("data-id");
-      console.log(elemento,"idProdotto");
-     localStorage.setItem("idProdotto", elemento);
-    
-     
+      console.log(elemento, "idProdotto");
+      localStorage.setItem("idProdotto", elemento);
+
+
 
     })
-   })
+  })
 }
 
 
@@ -98,3 +125,27 @@ bottoniFiltro.forEach(bottone => {
 
   })
 });
+
+
+// AGGIUNTA CARRELLO
+let arrCarrello = [];
+function aggiungiAlCarrello() {
+  let carrelli = document.querySelectorAll(".btnCarrello");
+  console.log(carrelli)
+  carrelli.forEach(carrello => {
+
+    carrello.addEventListener("click", function () {
+      console.log("Cliccato");
+
+      let idCarrello = this.getAttribute("data-id");
+      let letturaLocalStorage = JSON.parse(localStorage.getItem("Carrello"));
+      if (letturaLocalStorage != null) {
+        arrCarrello = letturaLocalStorage
+      }
+      arrCarrello.push(idCarrello);
+      console.log(arrCarrello);
+      localStorage.setItem("Carrello", JSON.stringify(arrCarrello));
+    })
+  });
+}
+

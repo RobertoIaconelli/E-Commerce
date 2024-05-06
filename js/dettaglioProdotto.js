@@ -22,7 +22,7 @@ fetch(`https://dummyjson.com/products/${storage}`)
         prevEl: ".swiper-button-prev",
       },
       thumbs: {
-        swiper: swiper2,swiper
+        swiper: swiper2, swiper
       },
     });
   });
@@ -55,7 +55,10 @@ function stampaDettaglio(prodotto) {
     <h1 class="titolo2">${prodotto.title}</h1>
     <p class="h4">Nome Brand: <span class="text-primary">${prodotto.brand}</span></p>
     <p class="descrizione">${prodotto.description}</p>
-    <i class="fa-solid fa-star"></i>
+    <div class="d-flex h6 box-voto">
+    <p class=""><span class="stellePiene"></span><span class="stelleVuote"></span></p>
+    <p class="voto">${prodotto.rating.toFixed(1)}</p>
+  </div>
     <p class="quantita">Quantità: <span class="text-success">${prodotto.stock}</span></p>
     <p class="h1">Prezzo: <span class="text-primary">${prodotto.price}€</span></p>
     <button onClick="aggiungiAlCarrello()" data-id="${prodotto.id}" class="btnCarrello">Aggiungi al carrello</button>
@@ -63,29 +66,48 @@ function stampaDettaglio(prodotto) {
     </div>
     </div>`;
 
-    container.innerHTML = card;
-    let imgtop = document.querySelector(".imgTop");
-    let imgBottom = document.querySelector(".imgBottom");
-    console.log(imgtop);
-    prodotto.images.forEach((immagine) => {
-      let cardImmagini = `<div class="swiper-slide">
+  container.innerHTML = card;
+
+  let voto = Math.ceil(prodotto.rating);
+  let currentCard = container.lastElementChild
+  console.log(voto);
+
+  let stellePiene = currentCard.querySelector(".stellePiene");
+  let stelleVuote = currentCard.querySelector(".stelleVuote");
+
+  for (i = 0; i < voto; i++) {
+    let stella = `<i class="fa-solid fa-star"></i>`;
+    stellePiene.innerHTML += stella;
+  }
+
+  for (i = 0; i < (5 - voto); i++) {
+    let stella = `<i class="fa-regular fa-star"></i>`;
+    stelleVuote.innerHTML += stella;
+  }
+
+
+  let imgtop = document.querySelector(".imgTop");
+  let imgBottom = document.querySelector(".imgBottom");
+  console.log(imgtop);
+  prodotto.images.forEach((immagine) => {
+    let cardImmagini = `<div class="swiper-slide">
               <img src="${immagine}"/></div>`;
-              imgtop.innerHTML += cardImmagini;
-              imgBottom.innerHTML+= cardImmagini;
-            });
+    imgtop.innerHTML += cardImmagini;
+    imgBottom.innerHTML += cardImmagini;
+  });
 }
 
 let arrCarrello = [];
-function aggiungiAlCarrello(){
-    let carrello = document.querySelector(".btnCarrello");
-    let idCarrello = carrello.getAttribute("data-id");
-    let letturaLocalStorage = JSON.parse(localStorage.getItem("Carrello"));
-    if(letturaLocalStorage != null){
-        arrCarrello = letturaLocalStorage
-    }
-    arrCarrello.push(idCarrello);
-    console.log(arrCarrello);
-    localStorage.setItem("Carrello", JSON.stringify(arrCarrello));
+function aggiungiAlCarrello() {
+  let carrello = document.querySelector(".btnCarrello");
+  let idCarrello = carrello.getAttribute("data-id");
+  let letturaLocalStorage = JSON.parse(localStorage.getItem("Carrello"));
+  if (letturaLocalStorage != null) {
+    arrCarrello = letturaLocalStorage
+  }
+  arrCarrello.push(idCarrello);
+  console.log(arrCarrello);
+  localStorage.setItem("Carrello", JSON.stringify(arrCarrello));
 
 
 }
