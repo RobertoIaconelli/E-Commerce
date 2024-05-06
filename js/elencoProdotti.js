@@ -29,7 +29,7 @@ function elencoProdotti(prodotto) {
           <div class="card-body">
           <h5 class="card-title">${elemento.title}</h5>
           <div class="d-flex justify-content-between">
-                  <p class="">${elemento.price.toFixed(2)}</p>
+                  <p class="h6">€${elemento.price.toFixed(2)}</p>
                   <div class="d-flex h6 box-voto">
                     <p class=""><span class="stellePiene"></span><span class="stelleVuote"></span></p>
                     <p class="voto">${elemento.rating.toFixed(1)}</p>
