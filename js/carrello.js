@@ -38,9 +38,9 @@ function stampaCarrello() {
         
         eliminaProdotto();
     });
+    quantita.innerHTML = arrayCarrello.length;
 });
 
-quantita.innerHTML = quantiProdotti;
 
 
 }
@@ -53,17 +53,17 @@ function eliminaProdotto() {
             arrayCarrello = arrayCarrello.filter(
                 (idProdotto) => idProdotto !== bottoneId
             );
-          
-
+            
+            
             localStorage.setItem("Carrello", JSON.stringify(arrayCarrello));
             let cardProdotto = document.querySelector(".prodottoCarrello");
             cardProdotto.remove();
+            quantita.innerHTML = arrayCarrello.length;
             aggiornamentoPrezzo();
             
-            quantita.innerHTML = quantiProdotti;
-         
+            
             console.log(quantita);
-
+            
         });
         
     });
