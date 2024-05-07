@@ -6,40 +6,61 @@ let numberProducts = document.querySelector(".totalProducts");
 
 function stampaCarrello() {
     let somma = 0;
-    arrayCarrello.forEach((idProdotto) => {
-        fetch(`https://dummyjson.com/products/${idProdotto}`)
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                let oggettoCarrello = `<div class="row prodottoCarrello">
-            <div class="col-lg-3 ">
-                <div class="divImmagine">
-                    <img src="${data.thumbnail}" class="immagineCarrello"/>
+    if (arrayCarrello.length == 0) {
+        container.innerHTML = `<div class="alto">
+        <h1 class="carrello">Carrello</h1>
+        <li><button class="btn btn-success" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Checkout</button>
+        </li>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 noProducts">
+            <p>Non ci sono prodotti</p>
+        </div>
+    </div>
+    `
+    } else {
+
+        arrayCarrello.forEach((idProdotto) => {
+            fetch(`https://dummyjson.com/products/${idProdotto}`)
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    let oggettoCarrello = `<div class="row prodottoCarrello">
+                <div class="col-lg-3 ">
+                    <div class="divImmagine">
+                        <img src="${data.thumbnail}" class="immagineCarrello"/>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-4 px-3">
-                <h1>${data.title}</h1>
-                <p>Quantità: ${data.stock}</p>
-                <p>Descrizione: ${data.description}</p>
-                <p>Prezzo: ${data.price}€ </p>
-                <button data-id="${data.id}"  class="bg-danger btnDelete">Rimuovi</button>
-                </div>
-                </div>`;
-                container.innerHTML += oggettoCarrello;
+                <div class="col-lg-4 px-3">
+                    <h1>${data.title}</h1>
+                    <p>Quantità: ${data.stock}</p>
+                    <p>Descrizione: ${data.description}</p>
+                    <p>Prezzo: ${data.price}€ </p>
+                    <button data-id="${data.id}"  class="bg-danger btnDelete">Rimuovi</button>
+                    </div>
+                    </div>`;
+                    container.innerHTML += oggettoCarrello;
 
-                let li = `<li>${data.title} - ${data.price}€</li>`;
-                listaPrezzi.innerHTML += li;
-                somma += data.price;
-
-
-                prezzoTotale.innerHTML = somma;
+                    let li = `<li>${data.title} - ${data.price}€</li>`;
+                    listaPrezzi.innerHTML += li;
+                    somma += data.price;
 
 
-                eliminaProdotto();
-            });
-    });
-    quantita.innerHTML = arrayCarrello.length;
+                    if (somma == 0) {
+
+                        prezzoTotale.innerHTML = 0;
+                    } else {
+                        prezzoTotale.innerHTML = somma;
+                    }
+
+
+                    eliminaProdotto();
+                });
+        });
+    }
+    numberProducts.innerHTML = arrayCarrello.length;
 }
 
 
@@ -54,17 +75,15 @@ function eliminaProdotto() {
             arrayCarrello = arrayCarrello.filter(
                 (idProdotto) => idProdotto !== bottoneId
             );
-            
-            
+
+
             localStorage.setItem("Carrello", JSON.stringify(arrayCarrello));
             let cardProdotto = document.querySelector(".prodottoCarrello");
             cardProdotto.remove();
-            quantita.innerHTML = arrayCarrello.length;
+            numberProducts.innerHTML = arrayCarrello.length;
             aggiornamentoPrezzo();
-            
-            
-            console.log(quantita);
-            
+
+
         });
 
     });
@@ -84,11 +103,15 @@ function aggiornamentoPrezzo() {
             .then(data => {
                 somma += data.price;
                 prezzoTotale.innerHTML = somma;
+
                 let li = `<li>${data.title} - ${data.price}</li>`;
                 listaPrezzi.innerHTML += li;
             })
 
     })
+    if (arrayCarrello.length == 0) {
+        prezzoTotale.innerHTML = 0;
+    }
 }
 
 stampaCarrello();
