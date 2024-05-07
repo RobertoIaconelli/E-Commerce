@@ -310,9 +310,13 @@ a {
     color: white;
 }
 
-.alto{
+.alto {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid black;
+}
+
+.alto li {
+    list-style: none;
 }
