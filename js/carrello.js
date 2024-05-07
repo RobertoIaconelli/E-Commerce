@@ -2,6 +2,8 @@ let container = document.querySelector(".oggettiCarrello");
 let arrayCarrello = JSON.parse(localStorage.getItem("Carrello"));
 let listaPrezzi = document.querySelector(".listaPrezzi");
 let prezzoTotale = document.querySelector(".prezzoTotale2");
+let quantita = document.querySelector(".quanti");
+let quantiProdotti= arrayCarrello.length;
 
 function stampaCarrello() {
   let somma = 0;
@@ -32,10 +34,15 @@ function stampaCarrello() {
 
 
         prezzoTotale.innerHTML = somma;
-
+        
+        
         eliminaProdotto();
     });
 });
+
+quantita.innerHTML = quantiProdotti;
+
+
 }
 
 function eliminaProdotto() {
@@ -46,12 +53,20 @@ function eliminaProdotto() {
             arrayCarrello = arrayCarrello.filter(
                 (idProdotto) => idProdotto !== bottoneId
             );
+          
+
             localStorage.setItem("Carrello", JSON.stringify(arrayCarrello));
             let cardProdotto = document.querySelector(".prodottoCarrello");
             cardProdotto.remove();
             aggiornamentoPrezzo();
+            
+            quantita.innerHTML = quantiProdotti;
+         
+            console.log(quantita);
+
+        });
+        
     });
-  });
 }
 
 function aggiornamentoPrezzo(){
