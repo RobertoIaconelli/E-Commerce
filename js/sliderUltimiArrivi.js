@@ -22,7 +22,7 @@ fetch(URLAPI)
       spaceBetween: 30,
       autoplay: {
         delay: 1000,
-        enabled: false,
+        enabled: true,
       },
 
     });
