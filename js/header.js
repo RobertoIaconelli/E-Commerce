@@ -1,8 +1,8 @@
 let elHeader = document.querySelectorAll(".header");
 
-function navBar(){
-    elHeader.forEach(header=>{
-      header.innerHTML+=`    <div class="container-fluid">
+function navBar() {
+  elHeader.forEach(header => {
+    header.innerHTML += `    <div class="container-fluid">
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-fluid">
           <div class="titolo">
@@ -21,22 +21,22 @@ function navBar(){
                   <a class="nav-link k" href="./prodotti.html" role="button">
                    Elenco prodotti
                   </a>
-                <li class="nav-item">
-                  <a class="nav-link k" href="./carrello.html">Carrello</a>
-                </li>
               </li>
           </ul>
       </div>
       <ul class="nav-item checkout">
-        <li><button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="bi bi-bag-check"></i></button></li>
+        <li class="nav-item">
+            <a class="nav-link k" href="./carrello.html"><i class="bi bi-bag-check"></i></a>
+        </li>
       </ul>
           </div>
         </nav>
    </div>`;
-    })
+  })
 }
 
-document.addEventListener("DOMContentLoaded" , navBar);
+document.addEventListener("DOMContentLoaded", navBar);
 
 
 
+//<li><button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="bi bi-bag-check"></i></button></li>

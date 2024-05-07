@@ -2,18 +2,17 @@ let container = document.querySelector(".oggettiCarrello");
 let arrayCarrello = JSON.parse(localStorage.getItem("Carrello"));
 let listaPrezzi = document.querySelector(".listaPrezzi");
 let prezzoTotale = document.querySelector(".prezzoTotale2");
-let quantita = document.querySelector(".quanti");
-let quantiProdotti= arrayCarrello.length;
+let numberProducts = document.querySelector(".totalProducts");
 
 function stampaCarrello() {
-  let somma = 0;
-  arrayCarrello.forEach((idProdotto) => {
-    fetch(`https://dummyjson.com/products/${idProdotto}`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        let oggettoCarrello = `<div class="row prodottoCarrello">
+    let somma = 0;
+    arrayCarrello.forEach((idProdotto) => {
+        fetch(`https://dummyjson.com/products/${idProdotto}`)
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                let oggettoCarrello = `<div class="row prodottoCarrello">
             <div class="col-lg-3 ">
                 <div class="divImmagine">
                     <img src="${data.thumbnail}" class="immagineCarrello"/>
@@ -22,25 +21,27 @@ function stampaCarrello() {
             <div class="col-lg-4 px-3">
                 <h1>${data.title}</h1>
                 <p>Quantità: ${data.stock}</p>
+                <p>Descrizione: ${data.description}</p>
                 <p>Prezzo: ${data.price}€ </p>
                 <button data-id="${data.id}"  class="bg-danger btnDelete">Rimuovi</button>
                 </div>
                 </div>`;
-        container.innerHTML += oggettoCarrello;
+                container.innerHTML += oggettoCarrello;
 
-        let li = `<li>${data.title} - ${data.price}</li>`;
-        listaPrezzi.innerHTML += li;
-        somma += data.price;
+                let li = `<li>${data.title} - ${data.price}€</li>`;
+                listaPrezzi.innerHTML += li;
+                somma += data.price;
 
 
-        prezzoTotale.innerHTML = somma;
-        
-        
-        eliminaProdotto();
+                prezzoTotale.innerHTML = somma;
+
+
+                eliminaProdotto();
+            });
     });
-});
-
-quantita.innerHTML = quantiProdotti;
+    let quantiProdotti = arrayCarrello.length;
+    numberProducts.innerHTML = quantiProdotti;
+    console.log(quantiProdotti, " riga 43")
 
 
 }
@@ -53,37 +54,40 @@ function eliminaProdotto() {
             arrayCarrello = arrayCarrello.filter(
                 (idProdotto) => idProdotto !== bottoneId
             );
-          
+
 
             localStorage.setItem("Carrello", JSON.stringify(arrayCarrello));
             let cardProdotto = document.querySelector(".prodottoCarrello");
             cardProdotto.remove();
             aggiornamentoPrezzo();
-            
-            quantita.innerHTML = quantiProdotti;
-         
-            console.log(quantita);
+
+            numberProducts.innerHTML = arrayCarrello.length;
+            console.log(arrayCarrello.length, "riga 66");
+
+
 
         });
-        
+
     });
 }
 
-function aggiornamentoPrezzo(){
+
+
+function aggiornamentoPrezzo() {
     let somma = 0;
     prezzoTotale.innerHTML = "";
-    listaPrezzi.innerHTML="";
-    arrayCarrello.forEach(idProdotto=>{
+    listaPrezzi.innerHTML = "";
+    arrayCarrello.forEach(idProdotto => {
         fetch(`https://dummyjson.com/products/${idProdotto}`)
-        .then((response) => {
-            return response.json();
-        })
-        .then(data=>{
-            somma+=data.price;
-            prezzoTotale.innerHTML = somma;
-            let li = `<li>${data.title} - ${data.price}</li>`;
-            listaPrezzi.innerHTML+= li;
-        })
+            .then((response) => {
+                return response.json();
+            })
+            .then(data => {
+                somma += data.price;
+                prezzoTotale.innerHTML = somma;
+                let li = `<li>${data.title} - ${data.price}</li>`;
+                listaPrezzi.innerHTML += li;
+            })
 
     })
 }
