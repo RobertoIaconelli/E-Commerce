@@ -22,19 +22,28 @@ function stampaCarrello(){
                 <p>Quantità: ${data.stock}</p>
                 <p>Prezzo: ${data.price}€ </p>
                 <button data-id="${data.id} class="bg-danger btnDelete">Rimuovi</button>
-            </div>
-        </div>`
-        container.innerHTML+= oggettoCarrello;
-      
-        
-        let li = `<li>${data.title} - ${data.price}</li>`
-        listaPrezzi.innerHTML+= li;
-        somma += data.price;
-        console.log(somma);
-        prezzoTotale.innerHTML= somma;
-        console.log(prezzoTotale);
-    })
-})
-}
+                </div>
+                </div>`
+                container.innerHTML+= oggettoCarrello;
+                
+                
+                let li = `<li>${data.title} - ${data.price}</li>`
+                listaPrezzi.innerHTML+= li;
+                somma += data.price;
+                console.log(somma);
+                prezzoTotale.innerHTML= somma;
+                console.log(prezzoTotale);
 
-stampaCarrello();
+
+                let btnDelete = document.querySelector(".btnDelete");
+                btnDelete.addEventListener("click", function(){
+                    console.log("ciao");
+                });
+            
+            })
+        })
+    }
+    
+    stampaCarrello();
+    
+    
