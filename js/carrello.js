@@ -40,11 +40,11 @@ function stampaCarrello() {
             });
     });
     quantita.innerHTML = arrayCarrello.length;
-});
-
-
-
 }
+
+
+
+
 
 function eliminaProdotto() {
     let btnDelete = document.querySelectorAll(".btnDelete");
