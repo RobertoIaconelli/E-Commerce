@@ -334,3 +334,18 @@ a {
     line-height: 200px;
     color: white;
 }
+
+.Prova2{
+    /* height: 100% !important;
+    width: 100% !important; */
+}
+
+.Prova2 img{
+    /* height: 100%;
+    width: 100%; */
+    object-fit: cover;
+}
+
+.swiper.mySwiper.mt-10{
+    margin-top: 7.5rem;
+}

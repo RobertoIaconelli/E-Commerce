@@ -49,12 +49,12 @@ body {
 }
 
 .swiperDettaglio {
-  height: 20%;
+ 
   box-sizing: border-box;
   padding: 10px 0;
 }
 
-.swiperDettaglio .swiper-slide {
+.lio .swiper-slide {
   width: 25%;
   height: 100%;
   opacity: 0.4;
@@ -156,3 +156,14 @@ body {
 .container-fluid {
   --bs-gutter-x: 1.5rem;
 }
+
+.imgBottom{
+  padding-top: 1rem;
+  width: 200px !important;
+  height: 200px !important;
+}
+
+.swiper-free-mode>.swiper-wrapper {
+  margin: 0 !important;
+}
+
