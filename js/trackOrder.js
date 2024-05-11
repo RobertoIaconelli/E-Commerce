@@ -37,9 +37,11 @@ function validazione() {
         statoOrdine.innerHTML = "Ordine Effettuato";
         progresso.innerHTML = ` <div class="progress mb-3" role="progressbar" aria-label="Success example" aria-valuenow="25"
         aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar beige " style="width: 25%">25%</div>
+        <div class="progress-bar yellow " style="width: 25%">25%</div>
       </div>`;
-        circleCollections[0].classList.add("")
+        circleCollections[0].classList.add("yellow");
+        iconaCollections[0].classList.add("yellow");
+        statoOrdine.classList.add("statoOrdine");
         break;
       case counter = 1:
         statoOrdine.innerHTML = "Ordine Spedito";
@@ -47,6 +49,9 @@ function validazione() {
         aria-valuemin="0" aria-valuemax="100">
         <div class="progress-bar bg-warning " style="width: 50%">50%</div>
       </div>`;
+      circleCollections[1].classList.add("orangee");
+      
+      statoOrdine.classList.add("statoOrdineSpedito");
         break;
       case counter = 2:
         statoOrdine.innerHTML = "Ordine In Consegna";
@@ -54,6 +59,9 @@ function validazione() {
         aria-valuemin="0" aria-valuemax="100">
         <div class="progress-bar bg-info " style="width: 75%">75%</div>
       </div>`;
+      circleCollections[2].classList.add("azzurrino");
+      iconaCollections[2].classList.add("azzurrino");
+      statoOrdine.classList.add("statoOrdineConsegna");
         break;
       case counter = 3:
         statoOrdine.innerHTML = "Ordine Consegnato";
@@ -61,6 +69,8 @@ function validazione() {
         aria-valuemin="0" aria-valuemax="100">
         <div class="progress-bar bg-success " style="width: 100%">100%</div>
       </div>`;
+      statoOrdine.classList.add("statoOrdineConsegnato");
+      circleCollections[3].classList.add("verde");
         break;
     }
     colora();

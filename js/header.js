@@ -23,10 +23,7 @@ function navBar() {
     </a>
     </li>
     <li class="nav-item">
-    <a class="nav-link k " aria-current="page" href="./contattaci.html">Contattaci</a>
-    </li>
-    <li class="nav-item">
-    <a class="nav-link k " aria-current="page" href="./tracciaPacco.html">Traccia il mio Pacco</a>
+    <a class="nav-link k " aria-current="page" href="./contattaci.html">Cerca spedizione</a>
     </li>
     <li class="nav-item">
     <a class="nav-link k " aria-current="page" href="./gestionale.html">Gestionale</a>

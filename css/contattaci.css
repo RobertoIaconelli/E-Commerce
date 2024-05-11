@@ -1,5 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Calibri:400,300,700);
 
+:root {
+  --headerColor: #116cad;
+  --secondaryColor: #ec721f;
+}
+
 .container .row.ordine {
   margin-top: 12rem;
   margin-bottom: 4rem;
@@ -90,8 +95,8 @@ hr {
 
 .btn {
   width: 50%;
-  background-color: rgb(255, 38, 0);
-  border-color: rgb(255, 38, 0);
+  background-color: var(--secondaryColor);
+  border-color: rgb(255, 166, 0);
   color: white;
   padding: 10px 15px;
   margin-bottom: 40px;
@@ -170,7 +175,7 @@ input:focus:-moz-placeholder {
 .linea::before {
   content: "";
   height: 4px;
-  background-color: red;
+  background-color: rgb(130, 92, 21);
   width: 100%;
   position: absolute;
   top: 50%;
@@ -233,10 +238,49 @@ input:focus:-moz-placeholder {
 }
 
 
-.check {
-  background-color: rgb(79, 199, 75) !important;
+
+
+.yellow{
+  background-color: yellow !important;
+  color: rgb(0, 0, 0) !important;
 }
 
-.check i {
-  color: rgb(17, 95, 17) !important;
+.orangee{
+  background-color: orange !important;
+  color: white !important;
+}
+
+
+.azzurrino{
+  background-color: #0dcaf0 !important;
+  
+}
+
+.azzurrino i{
+ color: #075d6e I !important;
+  
+}
+
+.statoOrdine{
+  color: yellow !important;
+}
+
+.statoOrdineSpedito{
+  color: orange !important;
+}
+
+.statoOrdineConsegna{
+  color: #0dcaf0 !important ;
+}
+
+.statoOrdineConsegnato{
+  color: green !important;
+}
+
+.orangeIcona{
+  color: rgb(126, 86, 12);
+}
+
+.verde{
+  background-color: rgb(35, 183, 35) !important;
 }
