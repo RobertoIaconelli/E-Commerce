@@ -1,6 +1,6 @@
 let swiperMain = document.querySelector(".swiper-wrapper.rb");
 
-let colori = ["rosso", "chiaro", "verde", "verdino", "grigio"];
+let colori = ["rosso", "chiaro", "verde", "viola", "grigio"];
 
 for (let i = 0; i < colori.length; i++) {
   let slide = `<div class="swiper-slide">
