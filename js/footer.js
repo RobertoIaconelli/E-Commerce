@@ -29,8 +29,8 @@ function stampaFooter() {
                   <span><i class="bi bi-shield-check"></i></span>
                 </div>
                 <div class="right">
-                  <div class="title">Spedizione rapida</div>
-                  <p>in 24/48 ore dall'ordine</p>
+                  <div class="title">Pagamenti sicuri</div>
+                  <p>Massima sicurezza!</p>
                 </div>
               </div>
             </div>
@@ -43,8 +43,8 @@ function stampaFooter() {
                   <span><i class="bi bi-arrow-clockwise"></i></span>
                 </div>
                 <div class="right">
-                  <div class="title">Spedizione rapida</div>
-                  <p>in 24/48 ore dall'ordine</p>
+                  <div class="title">Reso facile</div>
+                  <p>Tramite RMA Online</p>
                 </div>
               </div>
             </div>
@@ -58,7 +58,7 @@ function stampaFooter() {
                 </div>
                 <div class="right">
                   <div class="title">Spedizione rapida</div>
-                  <p>in 24/48 ore dall'ordine</p>
+                  <p>Via Email, Telefono o Chat</p>
                 </div>
               </div>
             </div>
