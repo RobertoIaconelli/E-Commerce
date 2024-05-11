@@ -4,66 +4,66 @@ let bottoniFiltro = document.querySelectorAll(".filtro");
 let filtroAll = document.querySelector("#pills-home-tab.filter-all");
 
 
-// // DATA
-// const URLAPI = "https://dummyjson.com/products";
+// DATA
+const URLAPI = "https://dummyjson.com/products";
 
 
-// fetch(URLAPI)
-//   .then(data => {
-//     return data.json();
-//   })
-//   .then(data => {
-//     elencoProdotti(data.products);
+fetch(URLAPI)
+  .then(data => {
+    return data.json();
+  })
+  .then(data => {
+    console.log(data.products)
+    elencoProdotti(data.products);
+  })
 
-//   })
 
+// STAMPO TUTTI I PRODOTTI
+function elencoProdotti(prodotto) {
+  prodotto.forEach(elemento => {
+    let elementos =
+      `<div class="card">
+          <div class="image">
+          <img src="${elemento.thumbnail}" class="" alt="...">
+          </div>
+          <div class="card-body">
+          <h5 class="card-title">${elemento.title}</h5>
+          <div class="d-flex justify-content-between">
+                  <p class="h6">€${elemento.price.toFixed(2)}</p>
+                  <div class="d-flex h6 box-voto">
+                    <p class=""><span class="stellePiene"></span><span class="stelleVuote"></span></p>
+                    <p class="voto">${elemento.rating.toFixed(1)}</p>
+                  </div>
+          </div>
+                <div class="d-flex justify-content-between gap-4 ">
+                  <a data-id="${elemento.id}" href="dettagliProdotto.html" class="btn btn-primary dettaglio w-90">Dettaglio prodotto</a>
+                  <button data-id="${elemento.id}" class="btn btn-dark btnCarrello"><i class="bi bi-cart3"></i></button>
+                </div>
+          </div>
+          </div>`
+    prodotti.innerHTML += elementos;
 
-// // STAMPO TUTTI I PRODOTTI
-// function elencoProdotti(prodotto) {
-//   prodotto.forEach(elemento => {
-//     let elementos =
-//       `<div class="card">
-//           <div class="image">
-//           <img src="${elemento.thumbnail}" class="" alt="...">
-//           </div>
-//           <div class="card-body">
-//           <h5 class="card-title">${elemento.title}</h5>
-//           <div class="d-flex justify-content-between">
-//                   <p class="h6">€${elemento.price.toFixed(2)}</p>
-//                   <div class="d-flex h6 box-voto">
-//                     <p class=""><span class="stellePiene"></span><span class="stelleVuote"></span></p>
-//                     <p class="voto">${elemento.rating.toFixed(1)}</p>
-//                   </div>
-//           </div>
-//                 <div class="d-flex justify-content-between gap-4 ">
-//                   <a data-id="${elemento.id}" href="dettagliProdotto.html" class="btn btn-primary dettaglio w-90">Dettaglio prodotto</a>
-//                   <button data-id="${elemento.id}" class="btn btn-dark btnCarrello"><i class="bi bi-cart3"></i></button>
-//                 </div>
-//           </div>
-//           </div>`
-//     prodotti.innerHTML += elementos;
+    let voto = Math.ceil(elemento.rating);
+    let currentCard = prodotti.lastElementChild
+    console.log(voto);
 
-//     let voto = Math.ceil(elemento.rating);
-//     let currentCard = prodotti.lastElementChild
-//     console.log(voto);
+    let stellePiene = currentCard.querySelector(".stellePiene");
+    let stelleVuote = currentCard.querySelector(".stelleVuote");
 
-//     let stellePiene = currentCard.querySelector(".stellePiene");
-//     let stelleVuote = currentCard.querySelector(".stelleVuote");
+    for (i = 0; i < voto; i++) {
+      let stella = `<i class="fa-solid fa-star"></i>`;
+      stellePiene.innerHTML += stella;
+    }
 
-//     for (i = 0; i < voto; i++) {
-//       let stella = `<i class="fa-solid fa-star"></i>`;
-//       stellePiene.innerHTML += stella;
-//     }
+    for (i = 0; i < (5 - voto); i++) {
+      let stella = `<i class="fa-regular fa-star"></i>`;
+      stelleVuote.innerHTML += stella;
+    }
 
-//     for (i = 0; i < (5 - voto); i++) {
-//       let stella = `<i class="fa-regular fa-star"></i>`;
-//       stelleVuote.innerHTML += stella;
-//     }
-
-//   });
-//   dettaglioProdotto();
-//   aggiungiAlCarrello();
-// }
+  });
+  dettaglioProdotto();
+  aggiungiAlCarrello();
+}
 
 
 function dettaglioProdotto() {
@@ -87,22 +87,22 @@ function dettaglioProdotto() {
 function filtroCategoria(categoria) {
   if (categoria === "all") {
     prodotti.innerHTML = "";
-    fetch("http://localhost:8080/api/prodotti")
+    fetch("https://dummyjson.com/products")
       .then(data => {
         return data.json();
       })
       .then(data => {
-        elencoProdotti(data);
+        elencoProdotti(data.products);
 
       })
   } else {
-    fetch(`http://localhost:8080/api/prodotti/${categoria}`)
+    fetch(`https://dummyjson.com/products/category/${categoria}`)
       .then(response => {
         return response.json()
       })
       .then(data => {
         prodotti.innerHTML = "";
-        elencoProdotti(data)
+        elencoProdotti(data.products)
       })
   }
 }
@@ -150,57 +150,57 @@ function aggiungiAlCarrello() {
 }
 
 
-fetch("http://localhost:8080/api/prodotti")
-  .then(data => {
-    return data.json();
-  })
-  .then(data => {
-    elencoProdotti(data);
+// fetch("http://localhost:8080/api/prodotti")
+//   .then(data => {
+//     return data.json();
+//   })
+//   .then(data => {
+//     elencoProdotti(data);
 
-  })
+//   })
 
-  function elencoProdotti(prodotto) {
-    prodotto.forEach(elemento => {
-      let elementos =
-        `<div class="card">
-            <div class="image">
-            <img src="${elemento.thumbnail}" class="" alt="...">
-            </div>
-            <div class="card-body">
-            <h5 class="card-title">${elemento.titolo}</h5>
-            <div class="d-flex justify-content-between">
-                    <p class="h6">€${elemento.prezzo.toFixed(2)}</p>
-                    <div class="d-flex h6 box-voto">
-                      <p class=""><span class="stellePiene"></span><span class="stelleVuote"></span></p>
-                      <p class="voto">${elemento.valutazione.toFixed(1)}</p>
-                    </div>
-            </div>
-                  <div class="d-flex justify-content-between gap-4 ">
-                    <a data-id="${elemento.id}" href="dettagliProdotto.html" class="btn btn-primary dettaglio w-90">Dettaglio prodotto</a>
-                    <button data-id="${elemento.id}" class="btn btn-dark btnCarrello"><i class="bi bi-cart3"></i></button>
-                  </div>
-            </div>
-            </div>`
-      prodotti.innerHTML += elementos;
-  
-      let voto = Math.ceil(elemento.rating);
-      let currentCard = prodotti.lastElementChild
-      console.log(voto);
-  
-      let stellePiene = currentCard.querySelector(".stellePiene");
-      let stelleVuote = currentCard.querySelector(".stelleVuote");
-  
-      for (i = 0; i < voto; i++) {
-        let stella = `<i class="fa-solid fa-star"></i>`;
-        stellePiene.innerHTML += stella;
-      }
-  
-      for (i = 0; i < (5 - voto); i++) {
-        let stella = `<i class="fa-regular fa-star"></i>`;
-        stelleVuote.innerHTML += stella;
-      }
-  
-    });
-    dettaglioProdotto();
-    aggiungiAlCarrello();
-  }
+// function elencoProdotti(prodotto) {
+//   prodotto.forEach(elemento => {
+//     let elementos =
+//       `<div class="card">
+//             <div class="image">
+//             <img src="${elemento.thumbnail}" class="" alt="...">
+//             </div>
+//             <div class="card-body">
+//             <h5 class="card-title">${elemento.titolo}</h5>
+//             <div class="d-flex justify-content-between">
+//                     <p class="h6">€${elemento.prezzo.toFixed(2)}</p>
+//                     <div class="d-flex h6 box-voto">
+//                       <p class=""><span class="stellePiene"></span><span class="stelleVuote"></span></p>
+//                       <p class="voto">${elemento.valutazione.toFixed(1)}</p>
+//                     </div>
+//             </div>
+//                   <div class="d-flex justify-content-between gap-4 ">
+//                     <a data-id="${elemento.id}" href="dettagliProdotto.html" class="btn btn-primary dettaglio w-90">Dettaglio prodotto</a>
+//                     <button data-id="${elemento.id}" class="btn btn-dark btnCarrello"><i class="bi bi-cart3"></i></button>
+//                   </div>
+//             </div>
+//             </div>`
+//     prodotti.innerHTML += elementos;
+
+//     let voto = Math.ceil(elemento.rating);
+//     let currentCard = prodotti.lastElementChild
+//     console.log(voto);
+
+//     let stellePiene = currentCard.querySelector(".stellePiene");
+//     let stelleVuote = currentCard.querySelector(".stelleVuote");
+
+//     for (i = 0; i < voto; i++) {
+//       let stella = `<i class="fa-solid fa-star"></i>`;
+//       stellePiene.innerHTML += stella;
+//     }
+
+//     for (i = 0; i < (5 - voto); i++) {
+//       let stella = `<i class="fa-regular fa-star"></i>`;
+//       stelleVuote.innerHTML += stella;
+//     }
+
+//   });
+//   dettaglioProdotto();
+//   aggiungiAlCarrello();
+// }

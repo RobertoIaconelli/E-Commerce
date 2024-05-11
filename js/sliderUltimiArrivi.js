@@ -36,7 +36,7 @@ function ultimiArriviCard(ultimiArr) {
           <div class="card">
               <div class="image position-relative">
                 <img src="${card.thumbnail}" class="" alt="...">
-                <p class="position-absolute new">New</p>
+                <p class="position-absolute new">Novità</p>
               </div>
               <div class="card-body">
                 <h5 class="card-title">${card.title}</h5>

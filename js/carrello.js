@@ -5,16 +5,18 @@ let prezzoTotale = document.querySelector(".prezzoTotale2");
 let numberProducts = document.querySelector(".totalProducts");
 let noProducts = document.querySelector("noProducts");
 
+console.log(arrayCarrello)
+
 function stampaCarrello() {
     let somma = 0;
-    
+
     arrayCarrello.forEach((idProdotto) => {
         fetch(`https://dummyjson.com/products/${idProdotto}`)
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            let oggettoCarrello = `
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                let oggettoCarrello = `
             <div class="row prodottoCarrello">
             <div class="col-lg-3 ">
             <div class="divImmagine">
@@ -29,28 +31,28 @@ function stampaCarrello() {
             <button data-id="${data.id}"  class="bg-danger btnDelete">Rimuovi</button>
             </div>
             </div>`;
-            container.innerHTML += oggettoCarrello;
-            
-            let li = `<li>${data.title} - ${data.price}€</li>`;
-            listaPrezzi.innerHTML += li;
-            somma += data.price;
-            
-            
-            if (somma == 0) {
-                
-                prezzoTotale.innerHTML = 0;
-            } else {
-                prezzoTotale.innerHTML = somma;
-            }
-            
-            
-            eliminaProdotto();
-        });
+                container.innerHTML += oggettoCarrello;
+
+                let li = `<li>${data.title} - ${data.price}€</li>`;
+                listaPrezzi.innerHTML += li;
+                somma += data.price;
+
+
+                if (somma == 0) {
+
+                    prezzoTotale.innerHTML = 0;
+                } else {
+                    prezzoTotale.innerHTML = somma;
+                }
+
+
+                eliminaProdotto();
+            });
     });
-    
+
 
     numberProducts.innerHTML = arrayCarrello.length;
-   
+
 }
 
 
@@ -62,17 +64,28 @@ function eliminaProdotto() {
     btnDelete.forEach((btn) => {
         btn.addEventListener("click", function () {
             let bottoneId = this.getAttribute("data-id");
-            arrayCarrello = arrayCarrello.filter(
-                (idProdotto) => idProdotto !== bottoneId
-            );
+            console.log(bottoneId, "id prodotto da eliminare");
 
+            let indiceProdotto = arrayCarrello.indexOf(bottoneId);
+            console.log(indiceProdotto);
+
+            arrayCarrello.splice(indiceProdotto, 1);
+
+
+            // FIX
+            // arrayCarrello = arrayCarrello.filter(
+            //     (idProdotto) => idProdotto !== bottoneId
+            // );
+            // console.log(arrayCarrello, "array dopo eliminazione")
+
+            console.log(arrayCarrello);
 
             localStorage.setItem("Carrello", JSON.stringify(arrayCarrello));
-            let cardProdotto = document.querySelector(".prodottoCarrello");
+            let cardProdotto = this.closest('.prodottoCarrello');
             cardProdotto.remove();
-        
+
             numberProducts.innerHTML = arrayCarrello.length;
-          
+
             aggiornamentoPrezzo();
 
         });

@@ -2,7 +2,73 @@ let elFooter = document.querySelectorAll(".footer");
 
 function stampaFooter() {
   elFooter.forEach(footer => {
-    footer.innerHTML += `<div class="container-md">
+    footer.innerHTML += `
+    <!-- TOP -->
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <!-- COL 1 -->
+          <div class="col-3">
+            <div class="footer-top-item">
+              <div class="d-flex align-items-center gap-3">
+                <div class="left">
+                  <span class="truck"><i class="bi bi-truck"></i></span>
+                </div>
+                <div class="right">
+                  <div class="title">Spedizione rapida</div>
+                  <p>in 24/48 ore dall'ordine</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- COL 2 -->
+          <div class="col-3">
+            <div class="footer-top-item">
+              <div class="d-flex align-items-center gap-3">
+                <div class="left">
+                  <span><i class="bi bi-shield-check"></i></span>
+                </div>
+                <div class="right">
+                  <div class="title">Spedizione rapida</div>
+                  <p>in 24/48 ore dall'ordine</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- COL 3 -->
+          <div class="col-3">
+            <div class="footer-top-item">
+              <div class="d-flex align-items-center gap-3">
+                <div class="left">
+                  <span><i class="bi bi-arrow-clockwise"></i></span>
+                </div>
+                <div class="right">
+                  <div class="title">Spedizione rapida</div>
+                  <p>in 24/48 ore dall'ordine</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- COL 4 -->
+          <div class="col-3">
+            <div class="footer-top-item">
+              <div class="d-flex align-items-center gap-3">
+                <div class="left">
+                  <span><i class="bi bi-chat-dots"></i></span>
+                </div>
+                <div class="right">
+                  <div class="title">Spedizione rapida</div>
+                  <p>in 24/48 ore dall'ordine</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CENTER -->
+    <div class="container-md py-4">
         <div class="row">
         <div class="col-3">
           <h5>Azamon</h5>
@@ -37,7 +103,26 @@ function stampaFooter() {
         </div>
 
       </div>
-    </div>`;
+    </div>
+    
+    <!-- BOTTOM -->
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center ">
+          <div class="left">
+            <p>
+              AZAMON SHOP – PROPRIETÀ DI ROBERTO IACONELLI S.P.A. P.I. IT01191437122 - COD. FISCALE E REG. IMPRESE
+              06225590129 <br> REA PN 18752 CAPITALE SOCIALE 150.000,00€ I.V. IC ROBERTO IACONELLI SPA 2024 © ALL RIGHTS
+              RESERVED
+            </p>
+          </div>
+          <div class="right">
+            <img src="imgs/footer/payments-footer.webp" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    `;
   })
 }
 

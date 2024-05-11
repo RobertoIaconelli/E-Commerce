@@ -1,3 +1,8 @@
+:root {
+    --headerColor: #116cad;
+    --secondaryColor: #ec721f;
+}
+
 .telefoni,
 .computer,
 .homedecorations {
@@ -172,8 +177,6 @@ a {
 }
 
 .footer {
-    background-color: grey;
-    padding-top: 2.5rem;
     border-bottom: 0.1rem solid black;
 }
 
@@ -202,7 +205,7 @@ a {
 }
 
 .activeMenu {
-    color: rgb(43, 104, 203) !important;
+    color: var(--secondaryColor) !important;
 }
 
 
@@ -335,17 +338,38 @@ a {
     color: white;
 }
 
-.Prova2{
+.Prova2 {
     /* height: 100% !important;
     width: 100% !important; */
 }
 
-.Prova2 img{
+.Prova2 img {
     /* height: 100%;
     width: 100%; */
     object-fit: cover;
 }
 
-.swiper.mySwiper.mt-10{
+.swiper.mySwiper.mt-10 {
     margin-top: 7.5rem;
+}
+
+/* HEADER */
+.header .container-fluid {
+    background-color: var(--headerColor);
+    color: white;
+}
+
+.nav-link {
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: var(--secondaryColor);
+}
+
+.navbar-brand img {
+    width: 150px;
 }

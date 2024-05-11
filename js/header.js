@@ -6,7 +6,7 @@ function navBar() {
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
     <div class="titolo">
-    <a class="navbar-brand" href="./index.html">Azamon</a>
+    <a class="navbar-brand" href="./index.html"><img src="imgs/logo.png" alt="azamon logo"></a>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -42,18 +42,18 @@ function navBar() {
     </div>
     </nav>
     </div>`;
-    
+
   })
-aggiornamentoProdotti();
+  aggiornamentoProdotti();
 }
 
 document.addEventListener("DOMContentLoaded", navBar);
 let cerchietto = document.getElementsByClassName(".cerchietto");
 
-function aggiornamentoProdotti(){
+function aggiornamentoProdotti() {
   let cerchietto = document.querySelector(".cerchietto");
   let arrayCarrello2 = JSON.parse(localStorage.getItem("Carrello"));
- cerchietto.innerHTML = arrayCarrello2.length;
+  cerchietto.innerHTML = arrayCarrello2.length;
 }
 
 setInterval(() => {
