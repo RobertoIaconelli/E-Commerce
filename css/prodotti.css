@@ -135,7 +135,7 @@
 }
 
 .prodottiNostri {
-    margin-top: 7rem;
+    margin-top: 10rem;
 }
 
 .filtri .nav-link {
@@ -287,3 +287,72 @@
     font-size: 3rem;
     color: #000000;
   }
+
+  .Javas{
+    margin-top: 10rem;
+
+  }
+
+  .container.Java{
+    min-height: 56rem;
+  }
+
+  .container.tracciaPacco{
+    min-height: 65.5rem;
+    border: 2px solid rgb(0, 0, 0);
+    width: 90%;
+    height: 100%;
+  }
+
+  .tracciaPacco{
+    height: 100rem;
+    width: 50rem;
+  }
+
+  .informazioni{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem;
+  }
+
+  .progress{
+    height: 2rem;
+  }
+
+  .ordinato{
+    color: white;
+    border: 1px solid #198754;
+    width: 20%;
+    background-color: #198754;
+  }
+
+  .spedito{
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(9, 215, 222);
+    width: 45%;
+    background-color: #0dcaf0;
+  }
+
+  .consegna  {
+    color: rgb(0, 0, 0);
+    border: 1px solid #ffc107;
+    width: 60%;
+    background-color: #ffc107;
+  }
+
+  .consegnato{
+    color: white;
+    border: 1px solid #dc3545;
+    width: 30%;
+    background-color: #dc3545;
+  }
+
+  .top{
+    margin-top: 8rem;
+  }
+
+  .dettaglione{
+    display: flex;
+  }
+
+ 

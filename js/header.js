@@ -23,7 +23,13 @@ function navBar() {
     </a>
     </li>
     <li class="nav-item">
-    <a class="nav-link k " aria-current="page" href="./tracciaPacco.html">Contattaci</a>
+    <a class="nav-link k " aria-current="page" href="./contattaci.html">Contattaci</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link k " aria-current="page" href="./tracciaPacco.html">Traccia il mio Pacco</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link k " aria-current="page" href="./gestionale.html">Gestionale</a>
     </li>
     </ul>
     </div>
@@ -38,13 +44,22 @@ function navBar() {
     </div>`;
     
   })
+aggiornamentoProdotti();
+}
+
+document.addEventListener("DOMContentLoaded", navBar);
+let cerchietto = document.getElementsByClassName(".cerchietto");
+
+function aggiornamentoProdotti(){
   let cerchietto = document.querySelector(".cerchietto");
   let arrayCarrello2 = JSON.parse(localStorage.getItem("Carrello"));
  cerchietto.innerHTML = arrayCarrello2.length;
 }
 
-document.addEventListener("DOMContentLoaded", navBar);
-let cerchietto = document.getElementsByClassName(".cerchietto");
+setInterval(() => {
+  aggiornamentoProdotti();
+}, 300);
+
 
 
 //<li><button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="bi bi-bag-check"></i></button></li>
