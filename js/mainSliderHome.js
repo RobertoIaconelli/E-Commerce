@@ -7,7 +7,7 @@ for (let i = 0; i < colori.length; i++) {
   <div class="background ${colori[i]}">
     <div class="container-mdf">
 
-      <img src="imgs/banner${i + 1}.jpg" alt="home" class=" homedeco">
+      <img src="imgs/home/banner${i + 1}.jpg" alt="home" class=" homedeco">
     </div>
   </div>
 </div>`;
