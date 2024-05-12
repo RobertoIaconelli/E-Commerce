@@ -265,11 +265,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
-  filter: grayscale(100%);
-}
-
-.colora {
-  filter: grayscale(0%);
 }
 
 .presentation {
@@ -283,4 +278,13 @@
 
 .cerchio:hover img {
   filter: grayscale(0%) !important;
+}
+
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+.no-grayscale {
+  filter: grayscale(0%);
 }

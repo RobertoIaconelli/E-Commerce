@@ -171,12 +171,23 @@ bottoniFiltro.forEach(bottone => {
       if (btn !== this) {
         btn.classList.remove("active");
       }
+
     });
 
     this.classList.add("active")
 
-    // let immagine = this.closest(".immagineFiltro");  
-    // immagine.classlist.add("colora");                   
+
+    let immaginiFiltri = document.querySelectorAll(".immagineFiltro");
+    immaginiFiltri.forEach(immagine => {
+      immagine.classList.add("grayscale")
+    });
+
+    let immagineCorrente = this.querySelector(".immagineFiltro");
+    immagineCorrente.classList.remove("grayscale")
+
+
+
+
     let prendiAttributo = this.getAttribute("data-filtro");
     filtroCategoria(prendiAttributo);
 
