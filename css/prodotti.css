@@ -247,3 +247,32 @@
 .dettaglione {
   display: flex;
 }
+
+.cerchio{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgba(166, 159, 159, 0.277);
+  text-align: center;
+  position: relative;
+}
+
+.cerchio img{
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+position: absolute;
+filter: grayscale(100%);
+}
+
+.colora{
+  filter: grayscale(0%);
+}
+
+.presentation{
+  margin-right: 1rem;
+  margin-top: 1rem;
+}

@@ -2,19 +2,29 @@ let prodotti = document.querySelector("#containerProdotti");
 let filtroTutti = document.getElementById("filtroTutto");
 let bottoniFiltro = document.querySelectorAll(".filtro");
 let filtroAll = document.querySelector("#pills-home-tab.filter-all");
+let immagineFiltro = document.querySelector(".immagineFiltro");
 
 
 // DATA
 const URLAPI = "https://dummyjson.com/products";
 
+//DUMMY JSON
+// fetch(URLAPI)
+//   .then(data => {
+//     return data.json();
+//   })
+//   .then(data => {
+//     console.log(data.products)
+//     elencoProdotti(data.products);
+//   })
 
-fetch(URLAPI)
+fetch("http://localhost:8080/api/prodotti")
   .then(data => {
     return data.json();
   })
   .then(data => {
-    console.log(data.products)
-    elencoProdotti(data.products);
+    console.log(data);
+    elencoProdotti(data);
   })
 
 
@@ -27,12 +37,12 @@ function elencoProdotti(prodotto) {
           <img src="${elemento.thumbnail}" class="" alt="...">
           </div>
           <div class="card-body">
-          <h5 class="card-title">${elemento.title}</h5>
+          <h5 class="card-title">${elemento.titolo}</h5>
           <div class="d-flex justify-content-between">
-                  <p class="h6">€${elemento.price.toFixed(2)}</p>
+                  <p class="h6">€${elemento.prezzo.toFixed(2)}</p>
                   <div class="d-flex h6 box-voto">
                     <p class=""><span class="stellePiene"></span><span class="stelleVuote"></span></p>
-                    <p class="voto">${elemento.rating.toFixed(1)}</p>
+                    <p class="voto">${elemento.valutazione.toFixed(1)}</p>
                   </div>
           </div>
                 <div class="d-flex justify-content-between gap-4 ">
@@ -43,7 +53,7 @@ function elencoProdotti(prodotto) {
           </div>`
     prodotti.innerHTML += elementos;
 
-    let voto = Math.ceil(elemento.rating);
+    let voto = Math.ceil(elemento.valutazione);
     let currentCard = prodotti.lastElementChild
     console.log(voto);
 
@@ -82,32 +92,56 @@ function dettaglioProdotto() {
 }
 
 
+// DUMMY JSON
+// // CHIAMATA PER CATEGORIA
+// function filtroCategoria(categoria) {
+//   if (categoria === "all") {
+//     prodotti.innerHTML = "";
+//     fetch("https://dummyjson.com/products")
+//       .then(data => {
+//         return data.json();
+//       })
+//       .then(data => {
+//         elencoProdotti(data.products);
+
+//       })
+//   } else {
+//     fetch(`https://dummyjson.com/products/category/${categoria}`)
+//       .then(response => {
+//         return response.json()
+//       })
+//       .then(data => {
+//         prodotti.innerHTML = "";
+//         elencoProdotti(data.products)
+//       })
+//   }
+// }
 
 // CHIAMATA PER CATEGORIA
 function filtroCategoria(categoria) {
   if (categoria === "all") {
     prodotti.innerHTML = "";
-    fetch("https://dummyjson.com/products")
+    fetch("http://localhost:8080/api/prodotti")
       .then(data => {
         return data.json();
       })
       .then(data => {
-        elencoProdotti(data.products);
+        elencoProdotti(data);
 
       })
   } else {
-    fetch(`https://dummyjson.com/products/category/${categoria}`)
+    fetch(`http://localhost:8080/api/prodotti/${categoria}`)
       .then(response => {
         return response.json()
       })
       .then(data => {
         prodotti.innerHTML = "";
-        elencoProdotti(data.products)
+        elencoProdotti(data);
       })
   }
 }
 
-filtroAll.classList.add("active");
+// filtroAll.classList.add("active");
 //CICLO BTN E PRENDO LA CATEGORIA
 bottoniFiltro.forEach(bottone => {
   bottone.addEventListener("click", function () {
@@ -120,6 +154,8 @@ bottoniFiltro.forEach(bottone => {
 
     this.classList.add("active")
 
+    // let immagine = this.closest(".immagineFiltro");  
+    // immagine.classlist.add("colora");                   
     let prendiAttributo = this.getAttribute("data-filtro");
     filtroCategoria(prendiAttributo);
 

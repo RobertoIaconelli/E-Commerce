@@ -6,12 +6,60 @@ let numberProducts = document.querySelector(".totalProducts");
 let noProducts = document.querySelector("noProducts");
 
 console.log(arrayCarrello)
+//DUMMY JSON
+// function stampaCarrello() {
+//     let somma = 0;
+
+//     arrayCarrello.forEach((idProdotto) => {
+//         fetch(`https://dummyjson.com/products/${idProdotto}`)
+//             .then((response) => {
+//                 return response.json();
+//             })
+//             .then((data) => {
+//                 let oggettoCarrello = `
+//             <div class="row prodottoCarrello">
+//             <div class="col-lg-3 ">
+//             <div class="divImmagine">
+//             <img src="${data.thumbnail}" class="immagineCarrello"/>
+//             </div>
+//             </div>
+//             <div class="col-lg-4 px-3">
+//             <h1>${data.title}</h1>
+//             <p>Quantità: ${data.stock}</p>
+//             <p>Descrizione: ${data.description}</p>
+//             <p>Prezzo: ${data.price}€ </p>
+//             <button data-id="${data.id}"  class="bg-danger btnDelete">Rimuovi</button>
+//             </div>
+//             </div>`;
+//                 container.innerHTML += oggettoCarrello;
+
+//                 let li = `<li>${data.title} - ${data.price}€</li>`;
+//                 listaPrezzi.innerHTML += li;
+//                 somma += data.price;
+
+
+//                 if (somma == 0) {
+
+//                     prezzoTotale.innerHTML = 0;
+//                 } else {
+//                     prezzoTotale.innerHTML = somma;
+//                 }
+
+
+//                 eliminaProdotto();
+//             });
+//     });
+
+
+//     numberProducts.innerHTML = arrayCarrello.length;
+
+// }
 
 function stampaCarrello() {
     let somma = 0;
 
     arrayCarrello.forEach((idProdotto) => {
-        fetch(`https://dummyjson.com/products/${idProdotto}`)
+        fetch(`http://localhost:8080/api/prodotti/prodotto/${idProdotto}`)
             .then((response) => {
                 return response.json();
             })
@@ -24,25 +72,25 @@ function stampaCarrello() {
             </div>
             </div>
             <div class="col-lg-4 px-3">
-            <h1>${data.title}</h1>
-            <p>Quantità: ${data.stock}</p>
-            <p>Descrizione: ${data.description}</p>
-            <p>Prezzo: ${data.price}€ </p>
+            <h1>${data.titolo}</h1>
+            <p>Quantità: ${data.disponibilita}</p>
+            <p>Descrizione: ${data.descrizione}</p>
+            <p>Prezzo: ${data.prezzo}€ </p>
             <button data-id="${data.id}"  class="bg-danger btnDelete">Rimuovi</button>
             </div>
             </div>`;
                 container.innerHTML += oggettoCarrello;
 
-                let li = `<li>${data.title} - ${data.price}€</li>`;
+                let li = `<li>${data.titolo} - ${data.prezzo}€</li>`;
                 listaPrezzi.innerHTML += li;
-                somma += data.price;
+                somma += data.prezzo;
 
 
                 if (somma == 0) {
 
                     prezzoTotale.innerHTML = 0;
                 } else {
-                    prezzoTotale.innerHTML = somma;
+                    prezzoTotale.innerHTML = somma.toFixed(2);
                 }
 
 
@@ -94,21 +142,44 @@ function eliminaProdotto() {
 }
 
 
+// DUMMY JSON
+// function aggiornamentoPrezzo() {
+//     let somma = 0;
+//     prezzoTotale.innerHTML = "";
+//     listaPrezzi.innerHTML = "";
+//     arrayCarrello.forEach(idProdotto => {
+//         fetch(`https://dummyjson.com/products/${idProdotto}`)
+//             .then((response) => {
+//                 return response.json();
+//             })
+//             .then(data => {
+//                 somma += data.price;
+//                 prezzoTotale.innerHTML = somma;
+
+//                 let li = `<li>${data.title} - ${data.price}</li>`;
+//                 listaPrezzi.innerHTML += li;
+//             })
+
+//     })
+//     if (arrayCarrello.length == 0) {
+//         prezzoTotale.innerHTML = 0;
+//     }
+// }
 
 function aggiornamentoPrezzo() {
     let somma = 0;
     prezzoTotale.innerHTML = "";
     listaPrezzi.innerHTML = "";
     arrayCarrello.forEach(idProdotto => {
-        fetch(`https://dummyjson.com/products/${idProdotto}`)
+        fetch(`http://localhost:8080/api/prodotti/prodotto/${idProdotto}`)
             .then((response) => {
                 return response.json();
             })
             .then(data => {
-                somma += data.price;
-                prezzoTotale.innerHTML = somma;
+                somma += data.prezzo;
+                prezzoTotale.innerHTML = somma.toFixed(2);
 
-                let li = `<li>${data.title} - ${data.price}</li>`;
+                let li = `<li>${data.titolo} - ${data.prezzo}</li>`;
                 listaPrezzi.innerHTML += li;
             })
 

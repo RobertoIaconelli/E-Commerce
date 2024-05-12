@@ -1,6 +1,34 @@
 let storage = localStorage.getItem("idProdotto");
+// DUMMY JSON
 // let prova = JSON.parse("idProdotto");
-fetch(`https://dummyjson.com/products/${storage}`)
+// fetch(`https://dummyjson.com/products/${storage}`)
+//   .then((response) => {
+//     return response.json();
+//   })
+//   .then((data) => {
+//     console.log(data);
+//     stampaDettaglio(data);
+//     var swiper = new Swiper(".swiperDettaglio", {
+//       loop: false,
+//       spaceBetween: 10,
+//       slidesPerView: 4,
+//       freeMode: true,
+//       watchSlidesProgress: true,
+//     });
+//     var swiper2 = new Swiper(".mySwiper2", {
+//       loop: false,
+//       spaceBetween: 10,
+//       navigation: {
+//         nextEl: ".swiper-button-next",
+//         prevEl: ".swiper-button-prev",
+//       },
+//       thumbs: {
+//         swiper: swiper2, swiper
+//       },
+//     });
+//   });
+
+  fetch(`http://localhost:8080/api/prodotti/prodotto/${storage}`)
   .then((response) => {
     return response.json();
   })
@@ -52,15 +80,15 @@ function stampaDettaglio(prodotto) {
     
     <div class="col-lg-5">
     <div class="prodottoDesc">
-    <h1 class="titolo2">${prodotto.title}</h1>
-    <p class="h4">Nome Brand: <span class="text-primary">${prodotto.brand}</span></p>
-    <p class="descrizione">${prodotto.description}</p>
+    <h1 class="titolo2">${prodotto.titolo}</h1>
+    <p class="h4">Nome Brand: <span class="text-primary">${prodotto.marca}</span></p>
+    <p class="descrizione">${prodotto.descrizione}</p>
     <div class="d-flex h6 box-voto">
     <p class=""><span class="stellePiene"></span><span class="stelleVuote"></span></p>
-    <p class="voto">${prodotto.rating.toFixed(1)}</p>
+    <p class="voto">${prodotto.valutazione.toFixed(1)}</p>
   </div>
-    <p class="quantita">Quantità: <span class="text-success">${prodotto.stock}</span></p>
-    <p class="h1">Prezzo: <span class="text-primary">${prodotto.price}€</span></p>
+    <p class="quantita">Quantità: <span class="text-success">${prodotto.disponibilita}</span></p>
+    <p class="h1">Prezzo: <span class="text-primary">${prodotto.prezzo}€</span></p>
     <button onClick="aggiungiAlCarrello()" data-id="${prodotto.id}" class="btnCarrello">Aggiungi al carrello</button>
     </div>
     </div>
@@ -68,7 +96,7 @@ function stampaDettaglio(prodotto) {
 
   container.innerHTML = card;
 
-  let voto = Math.ceil(prodotto.rating);
+  let voto = Math.ceil(prodotto.valutazione);
   let currentCard = container.lastElementChild
   console.log(voto);
 
