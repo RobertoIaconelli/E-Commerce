@@ -3,6 +3,9 @@ let filtroTutti = document.getElementById("filtroTutto");
 let bottoniFiltro = document.querySelectorAll(".filtro");
 let filtroAll = document.querySelector("#pills-home-tab.filter-all");
 let immagineFiltro = document.querySelector(".immagineFiltro");
+let containerFiltri = document.querySelector(".filtri");
+let loader = document.querySelector(".loader");
+let titolo = document.querySelector(".prodottiNostri");
 
 
 // DATA
@@ -27,12 +30,14 @@ fetch("http://localhost:8080/api/prodotti")
     elencoProdotti(data);
   })
 
+let counter = 1;
 
 // STAMPO TUTTI I PRODOTTI
 function elencoProdotti(prodotto) {
   prodotto.forEach(elemento => {
+
     let elementos =
-      `<div class="card d-none">
+      `<div class="card ">
           <div class="image">
           <img src="${elemento.thumbnail}" class="" alt="...">
           </div>
@@ -52,6 +57,7 @@ function elencoProdotti(prodotto) {
           </div>
           </div>`
     prodotti.innerHTML += elementos;
+    counter++;
 
     let voto = Math.ceil(elemento.valutazione);
     let currentCard = prodotti.lastElementChild
@@ -71,9 +77,24 @@ function elencoProdotti(prodotto) {
     }
 
   });
+
+
+
+
   dettaglioProdotto();
   aggiungiAlCarrello();
 }
+
+
+setTimeout(() => {
+  loader.classList.add("d-none")
+  prodotti.classList.remove("d-none");
+  containerFiltri.classList.remove("d-none");
+  titolo.classList.remove("d-none");
+
+}, 7000);
+
+
 
 
 function dettaglioProdotto() {
