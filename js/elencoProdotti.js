@@ -32,7 +32,7 @@ fetch("http://localhost:8080/api/prodotti")
 function elencoProdotti(prodotto) {
   prodotto.forEach(elemento => {
     let elementos =
-      `<div class="card">
+      `<div class="card d-none">
           <div class="image">
           <img src="${elemento.thumbnail}" class="" alt="...">
           </div>

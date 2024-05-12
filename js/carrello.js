@@ -92,8 +92,6 @@ function stampaCarrello() {
                 } else {
                     prezzoTotale.innerHTML = somma.toFixed(2);
                 }
-
-
                 eliminaProdotto();
             });
     });
