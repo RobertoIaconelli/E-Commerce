@@ -63,6 +63,7 @@ function stampaDettaglio(prodotto) {
     <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
     
     <div class="swiper-wrapper imgTop">
+    <img src="${prodotto.thumbnail}">
     </div>
     
     <div class="swiper-button-next"></div>
@@ -114,15 +115,15 @@ function stampaDettaglio(prodotto) {
   }
 
 
-  let imgtop = document.querySelector(".imgTop");
-  let imgBottom = document.querySelector(".imgBottom");
-  console.log(imgtop);
-  prodotto.images.forEach((immagine) => {
-    let cardImmagini = `<div class="swiper-slide">
-              <img src="${immagine}"/></div>`;
-    imgtop.innerHTML += cardImmagini;
-    imgBottom.innerHTML += cardImmagini;
-  });
+  // let imgtop = document.querySelector(".imgTop");
+  // let imgBottom = document.querySelector(".imgBottom");
+  // console.log(imgtop);
+  // prodotto.images.forEach((immagine) => {
+  //   let cardImmagini = `<div class="swiper-slide">
+  //             <img src="${immagine}"/></div>`;
+  //   imgtop.innerHTML += cardImmagini;
+  //   imgBottom.innerHTML += cardImmagini;
+  // });
 }
 
 let arrCarrello = [];
