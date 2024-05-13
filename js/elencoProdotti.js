@@ -92,7 +92,7 @@ setTimeout(() => {
   containerFiltri.classList.remove("d-none");
   titolo.classList.remove("d-none");
 
-}, 7000);
+}, 1000);
 
 
 

@@ -1,3 +1,8 @@
+:root {
+  --headerColor: #116cad;
+  --secondaryColor: #ec721f;
+}
+
 #navbarNavDropdown {
   display: flex;
   justify-content: center;
@@ -49,7 +54,7 @@ body {
 }
 
 .swiperDettaglio {
- 
+
   box-sizing: border-box;
   padding: 10px 0;
 }
@@ -157,7 +162,7 @@ body {
   --bs-gutter-x: 1.5rem;
 }
 
-.imgBottom{
+.imgBottom {
   padding-top: 1rem;
   width: 200px !important;
   height: 200px !important;
@@ -167,7 +172,7 @@ body {
   margin: 0 !important;
 }
 
-.btnCarrello{
+.btnCarrello {
   background-color: dodgerblue;
   color: white;
   border-radius: 1rem;
@@ -176,3 +181,32 @@ body {
   padding: 8px 15px;
 }
 
+.imgTop img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+
+
+/* HEADER */
+.header .container-fluid {
+  background-color: var(--headerColor);
+  color: white;
+}
+
+.nav-link {
+  color: white !important;
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: bold !important;
+}
+
+.nav-link:hover {
+  color: var(--secondaryColor) !important;
+}
+
+.navbar-brand img {
+  width: 150px;
+}
