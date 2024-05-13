@@ -1,32 +1,58 @@
 let container = document.querySelector(".swiper-wrapper.ultimiarrivi");
 
-// DATA
-const URLAPI = "https://dummyjson.com/products";
+//DUMMY JSON
+// // DATA
+// const URLAPI = "https://dummyjson.com/products";
 
-// FETCH + SLIDER(ULTIMI ARRIVI)
-fetch(URLAPI)
-  .then(data => {
-    return data.json();
-  })
-  .then(data => {
+// // FETCH + SLIDER(ULTIMI ARRIVI)
+// fetch(URLAPI)
+//   .then(data => {
+//     return data.json();
+//   })
+//   .then(data => {
 
 
-    let ottoElementi = data.products.slice(0, 8);
-    ultimiArriviCard(ottoElementi);
-    var swiper = new Swiper(".cards", {
-      slidesPerView: 4,
-      grid: {
-        rows: 1,
-      },
-      loop: true,
-      spaceBetween: 30,
-      autoplay: {
-        delay: 1000,
-        enabled: true,
-      },
+//     let ottoElementi = data.products.slice(0, 8);
+//     ultimiArriviCard(ottoElementi);
+//     var swiper = new Swiper(".cards", {
+//       slidesPerView: 4,
+//       grid: {
+//         rows: 1,
+//       },
+//       loop: true,
+//       spaceBetween: 30,
+//       autoplay: {
+//         delay: 1000,
+//         enabled: true,
+//       },
 
-    });
-  })
+//     });
+//   })
+
+  // FETCH + SLIDER(ULTIMI ARRIVI)
+fetch("http://localhost:8080/api/prodotti")
+.then(data => {
+  return data.json();
+})
+.then(data => {
+
+
+  let ottoElementi = data.slice(0, 8);
+  ultimiArriviCard(ottoElementi);
+  var swiper = new Swiper(".cards", {
+    slidesPerView: 4,
+    grid: {
+      rows: 1,
+    },
+    loop: true,
+    spaceBetween: 30,
+    autoplay: {
+      delay: 1000,
+      enabled: true,
+    },
+
+  });
+})
 
 
 function ultimiArriviCard(ultimiArr) {
@@ -39,12 +65,12 @@ function ultimiArriviCard(ultimiArr) {
                 <p class="position-absolute new">Novità</p>
               </div>
               <div class="card-body">
-                <h5 class="card-title">${card.title}</h5>
+                <h5 class="card-title">${card.titolo}</h5>
                 <div class="d-flex justify-content-between">
-                  <p class="h6">€${card.price.toFixed(2)}</p>
+                  <p class="h6">€${card.prezzo.toFixed(2)}</p>
                   <div class="d-flex h6 box-voto">
                     <p class=""><span class="stellePiene"></span><span class="stelleVuote"></span></p>
-                    <p class="voto">${card.rating.toFixed(1)}</p>
+                    <p class="voto">${card.valutazione.toFixed(1)}</p>
                   </div>
                 </div>
                 <div class="d-flex justify-content-between gap-4 ">
@@ -57,7 +83,7 @@ function ultimiArriviCard(ultimiArr) {
 
     container.innerHTML += cards;
 
-    let voto = Math.ceil(card.rating);
+    let voto = Math.ceil(card.valutazione);
     let currentCard = container.lastElementChild
     console.log(voto);
 

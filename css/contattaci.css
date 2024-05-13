@@ -241,7 +241,7 @@ input:focus:-moz-placeholder {
 
 
 .yellow{
-  background-color: yellow !important;
+  background-color: rgb(214, 128, 238) !important;
   color: rgb(0, 0, 0) !important;
 }
 
@@ -262,7 +262,7 @@ input:focus:-moz-placeholder {
 }
 
 .statoOrdine{
-  color: yellow !important;
+  color: rgb(214, 128, 238) !important;
 }
 
 .statoOrdineSpedito{

@@ -16,7 +16,7 @@
 	--polygonH: polygon(0% 0%, 100% 0%, 100% 5.55%, 95% 5.55%, 95% 28%, 60% 46%, 60% 54%, 95% 72%, 95% 94.45%, 100% 94.45%, 100% 100%, 0% 100%, 0% 94.45%, 5% 94.45%, 5% 72%, 40% 54%, 40% 46%, 5% 28%, 5% 5.55%, 0% 5.55%);
 	animation-name: flip;
 	animation-timing-function: ease-in-out;
-	background-image: linear-gradient(var(--primary) 0.5em, #737a8c55 0.5em 8.5em, var(--primary) 8.5em);
+	background-image: linear-gradient(var(--primary) 0.5em, #8c847355 0.5em 8.5em, var(--primary) 8.5em);
 	clip-path: var(--polygonH);
 	-webkit-clip-path: var(--polygonH);
 	overflow: hidden;
@@ -124,6 +124,6 @@
 @media (prefers-color-scheme: dark) {
 	:root {
 		--bg: #17181c;
-		--fg: #c7cad1;
+		--fg: #ee8f09;
 	}
 }
