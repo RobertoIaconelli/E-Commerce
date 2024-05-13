@@ -45,17 +45,6 @@
   text-align: center;
 }
 
-.ultimi-arrivi-titolo .titoloUltimi::before {
-  background-color: #d2d4d9;
-  content: "";
-  height: 1px;
-  left: 0;
-  opacity: .59;
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  z-index: 1;
-}
 
 .ultimi-arrivi-titolo .titoloUltimi {
   z-index: 2;
